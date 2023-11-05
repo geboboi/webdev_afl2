@@ -1,3 +1,21 @@
+<section class="top-notification-bar">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ul class="notification-entry">
+                    <!-- notification discount start -->
+                    <li class="notify-wrap coupan-text">
+                        <p>
+                            <span>New customer save 15% off use code :</span>
+                            <span class="code-text">WUNG02N0</span>
+                        </p>
+                    </li>
+                    <!-- notification discount end -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
 <header class="header-area">
     <div class="container-fluid">
         <div class="row">
@@ -6,7 +24,7 @@
                     <!-- header logo start -->
                     <div class="header-element logo">
                         <a href="index-4.html" class="theme-header-logo">
-                            <img src="img/logo/logo4.png" class="img-fluid" alt="logo">
+                            <img src="{{asset ('assets/img/logo/logo4.png')}}" class="img-fluid" alt="logo">
                         </a>
                     </div>
                     <div class="header-element megamenu-content">
@@ -15,11 +33,7 @@
                                 <li class="menu-link">
                                     <a href="index.html" class="link-title">
                                         <span class="sp-link-title">Home</span>
-                                        <span class="menu-arrow"><i class="feather-chevron-down"></i></span>
-                                    </a>
-                                    <a href="#desk-home" data-bs-toggle="collapse" class="link-title link-title-lg">
-                                        <span class="sp-link-title">Home</span>
-                                        <span class="menu-arrow"><i class="feather-chevron-down"></i></span>
+
                                     </a>
                                 </li>
                                 <li class="menu-link">
@@ -27,21 +41,23 @@
                                         <span class="sp-link-title">Product
                                             {{-- <span class="label">sale</span> --}}
                                         </span>
-                                        <span class="menu-arrow"><i class="feather-chevron-down"></i></span>
-                                    </a>
-                                    <a href="#desk-single-product" data-bs-toggle="collapse" class="link-title link-title-lg">
-                                        <span class="sp-link-title">Product</span>
-                                        <span class="menu-arrow"><i class="feather-chevron-down"></i></span>
+
                                     </a>
                                 </li>
                                 <li class="menu-link">
                                     <a href="blog-grid.html" class="link-title">
-                                        <span class="sp-link-title">Blogs</span>
-                                        <span class="menu-arrow"><i class="feather-chevron-down"></i></span>
+                                        <span class="sp-link-title">Promo</span>
+
                                     </a>
-                                    <a href="#desk-single-blog" data-bs-toggle="collapse" class="link-title link-title-lg">
-                                        <span class="sp-link-title">Blogs</span>
-                                        <span class="menu-arrow"><i class="feather-chevron-down"></i></span>
+                                </li>
+                                <li class="menu-link">
+                                    <a href="blog-grid.html" class="link-title">
+                                        <span class="sp-link-title">About</span>
+                                    </a>
+                                </li>
+                                <li class="menu-link">
+                                    <a href="blog-grid.html" class="link-title">
+                                        <span class="sp-link-title">Contact Us</span>
                                     </a>
                                 </li>
                             </ul>
@@ -52,5 +68,3 @@
         </div>
     </div>
 </header>
-
-                    

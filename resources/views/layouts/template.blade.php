@@ -36,6 +36,7 @@
 <body>
 @include('layouts.header')
 @yield('main_content')
+@include('layouts.footer')
 <!-- screen-bg start -->
 <div class="screen-bg"></div>
 <!-- screen-bg end -->

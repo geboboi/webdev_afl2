@@ -1,6 +1,7 @@
 @extends('layouts.template')
 @section('title', $title)
 @section('main_content')
+<main>
     <section class="slider-content">
         <div class="home-slider owl-carousel owl-theme" id="home-slider">
             <div class="item active">
@@ -63,7 +64,6 @@
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -73,5 +73,79 @@
         </div>
     </section>
 
-
+     <!-- banner start -->
+     <section class="banner-area section-ptb">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="banner-content">
+                        <div class="banner-grid">
+                            <div class="single-banner banner-hover">
+                                <a href="javascript:void(0)" class="banner-img">
+                                    <img src="{{asset('assets/img/banner/banner-03.jpg')}}" class="img-fluid" alt="banner-03">
+                                </a>
+                            </div>
+                            <div class="abt-banner-desc">
+                                <h2>Bread & Buttermilk</h2>
+                                <p class="sub-title">The perfect combination of bread and milk creates a nutritious breakfast. Include milk and starches with essential nutrients for a day's work. The cakes are made during the day to ensure the freshness of each cake. We always work hard to create the best cakes with every meal.</p>
+                                <a href="collection.html" class="btn btn-style">Shop now</a>
+                            </div>
+                        </div>
+                        <div class="banner-grid">
+                            <div class="single-banner banner-hover">
+                                <a href="javascript:void(0)" class="banner-img">
+                                    <img src="{{asset('assets/img/banner/banner-04.jpg')}}" class="img-fluid" alt="banner-04">
+                                </a>
+                            </div>
+                            <div class="abt-banner-desc">
+                                <h2>The maker of the bread</h2>
+                                <p class="sub-title">Banno breads are always made from skillful hands and from bakers who put their heart into each cake. Banno always makes cakes by hand and guarantees quality on every product. Creating the perfect meal for our customers is a fun every day at banno.</p>
+                                <a href="collection.html" class="btn btn-style">Shop now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- banner end -->
+    <!-- service area start -->
+    <section class="our-service-area section-ptb">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <ul class="single-service">
+                        <li class="service-content">
+                            <div class="ser-block">
+                                <a href="javascript:void(0)"><i class="feather-truck"></i></a>
+                                <div class="service-text">
+                                    <h6>Shipping & return</h6>
+                                    <p>If your glasses aren't perfect, return them within 30 days for a full refund.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="service-content">
+                            <div class="ser-block">
+                                <a href="javascript:void(0)"><i class="feather-shield"></i></a>
+                                <div class="service-text">
+                                    <h6>Safe payment</h6>
+                                    <p>Pay with the world's most popular and secure payment methods</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="service-content">
+                            <div class="ser-block">
+                                <a href="javascript:void(0)"><i class="feather-shopping-cart"></i></a>
+                                <div class="service-text">
+                                    <h6>Shop with confidence</h6>
+                                    <p>Our buyer protection covers your purchase from click to delivery.</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
 @endsection
