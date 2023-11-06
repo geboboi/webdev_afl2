@@ -1,5 +1,5 @@
+@include('layouts.notifbar')
 @extends('layouts.template')
-@section('title', )
 @section('main_content')
 <main>
     <section class="slider-content">

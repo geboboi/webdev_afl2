@@ -2534,6 +2534,7 @@ a.theme-header-logo img {
 .single-product-wrap:hover .product-image a.pro-img img.img2 {
     opacity: 1;
     visibility: visible;
+
 }
 .single-product-wrap .product-image a.pro-img img,
 .single-product-wrap:hover .product-image a.pro-img img {

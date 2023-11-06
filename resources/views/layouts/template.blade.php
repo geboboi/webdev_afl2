@@ -31,9 +31,11 @@
     <link rel="stylesheet" type of="text/css" href="{{ asset('assets/css/slick.css') }}">
     <!-- style css -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style4.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/collection-page.css') }}">
 </head>
 
 <body>
+
 @include('layouts.header')
 @yield('main_content')
 @include('layouts.footer')
@@ -67,7 +69,10 @@
 <script src="{{ asset('assets/js/waypoints.min.js') }}"></script>
 <!-- counter js -->
 <script src="{{ asset('assets/js/counter.js') }}"></script>
+<script src="{{ asset('assets/js/range-slider.js') }}"></script>
 <!-- main js -->
 <script src="{{ asset('assets/js/main4.js') }}"></script>
+<script src="{{ asset('assets/js/main.js') }}"></script>
+
 </body>
 </html>
