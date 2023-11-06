@@ -3,6 +3,8 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Promo;
+
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Product>
@@ -17,7 +19,13 @@ class ProductFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            // 'name' => fake()->name(),
+            // 'price' => fake()->numberBetween(1, 1000),
+            // 'description' => fake()->text(),
+            // 'image' => fake()->imageUrl(),
+            // 'promo_id' => function () {
+            //     return Promo::factory()->create()->id;
+            // }
         ];
     }
 }

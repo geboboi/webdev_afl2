@@ -32,6 +32,8 @@
     <!-- style css -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style4.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/collection-page.css') }}">
+    <!-- other-page css -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/other-page.css')}}">
 </head>
 
 <body>

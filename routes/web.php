@@ -17,4 +17,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [ProductController::class, 'index']);
 
 Route::get('/product', [ProductController::class, 'list']);
-// Route::get()
+
+Route::get('/about', function(){
+    return view('about', [
+        'title' => 'About Us'
+    ]);
+});
+
+Route::get('/contact_us', function(){
+    return view('contact_us', [
+        'title' => 'Contact Us'
+    ]);
+});

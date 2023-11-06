@@ -34,12 +34,12 @@
                                     </a>
                                 </li>
                                 <li class="menu-link">
-                                    <a href="blog-grid.html" class="link-title">
+                                    <a href="/about" class="link-title">
                                         <span class="sp-link-title">About</span>
                                     </a>
                                 </li>
                                 <li class="menu-link">
-                                    <a href="blog-grid.html" class="link-title">
+                                    <a href="/contact_us" class="link-title">
                                         <span class="sp-link-title">Contact Us</span>
                                     </a>
                                 </li>
