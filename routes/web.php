@@ -13,4 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'index', ['title' => 'Michs Kitchen']);
+Route::view('/', 'index', [
+    'title' => 'Michs Kitchen'
+]
+);
+
+// Route::get()
