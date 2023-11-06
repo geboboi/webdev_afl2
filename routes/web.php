@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'index', [
-    'title' => 'Michs Kitchen'
-]
-);
+Route::get('/', [ProductController::class, 'index']);
 
 // Route::get()

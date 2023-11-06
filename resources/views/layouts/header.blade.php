@@ -6,8 +6,9 @@
                     <!-- notification discount start -->
                     <li class="notify-wrap coupan-text">
                         <p>
-                            <span>New customer save 15% off use code :</span>
-                            <span class="code-text">WUNG02N0</span>
+                            <span>CHRISTMAS</span>
+                            <span class="code-text px-3" style="font-size: 18pt"><STRONG>SALE</STRONG></span>
+                            <span>UP TO 20% OFF</span>
                         </p>
                     </li>
                     <!-- notification discount end -->
