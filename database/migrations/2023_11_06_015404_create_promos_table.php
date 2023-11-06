@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('promos', function (Blueprint $table) {
             $table->id();
+            $table->integer('percentage');
+            $table->foreignIdFor(\App\Models\Product::class);
+            $table->foreignIdFor(\App\Models\Event::class);
             $table->timestamps();
         });
     }
