@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\PromoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [ProductController::class, 'index']);
 
 Route::get('/product', [ProductController::class, 'list']);
+
+Route::get('/promo', [PromoController::class, 'index']);
 
 Route::get('/about', function(){
     return view('about', [

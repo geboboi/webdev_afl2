@@ -10,6 +10,6 @@ class Promo extends Model
     use HasFactory;
 
     protected $fillable = [
-        'percentage', 'product_id', 'event_id'
+        'percentage', 'product_id', 'event_id', 'banner'
     ];
 }

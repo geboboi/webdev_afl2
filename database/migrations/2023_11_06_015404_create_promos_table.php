@@ -16,6 +16,7 @@ return new class extends Migration
             $table->integer('percentage');
             $table->foreignIdFor(\App\Models\Product::class);
             $table->foreignIdFor(\App\Models\Event::class);
+            $table->string('banner');
             $table->timestamps();
         });
     }

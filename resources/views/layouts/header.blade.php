@@ -28,9 +28,8 @@
                                     </a>
                                 </li>
                                 <li class="menu-link">
-                                    <a href="blog-grid.html" class="link-title">
+                                    <a href="/promo" class="link-title">
                                         <span class="sp-link-title">Promo</span>
-
                                     </a>
                                 </li>
                                 <li class="menu-link">
