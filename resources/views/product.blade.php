@@ -36,8 +36,8 @@
                                                             <!-- product-img start -->
                                                             <div class="product-image">
                                                                 <a href="product-template2.html" class="pro-img">
-                                                                    <img src="{{asset('assets/img/product/p-1.jpg')}}" class="img-fluid img1" alt="p-1">
-                                                                    <img src="{{asset('assets/img/product/p-2.jpg')}}" class="img-fluid img2" alt="p-2">
+                                                                    <img src="{{asset('assets/img/product/1.png')}}" class="img-fluid img1" alt="p-1">
+                                                                    <img src="{{asset('assets/img/product/1.png')}}" class="img-fluid img2" alt="p-2">
                                                                 </a>
                                                                 <!-- product-label start -->
                                                                 <!-- <div class="product-label">
