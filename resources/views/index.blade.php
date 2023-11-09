@@ -119,8 +119,8 @@
                             <div class="ser-block">
                                 <a href="javascript:void(0)"><i class="feather-truck"></i></a>
                                 <div class="service-text">
-                                    <h6>Shipping & return</h6>
-                                    <p>If your glasses aren't perfect, return them within 30 days for a full refund.</p>
+                                    <h6>Shipping</h6>
+                                    <p>Our efficient shipping ensures that the delectable treats are delivered to your doorstep with speed and care, preserving their freshness for you to savor.</p>
                                 </div>
                             </div>
                         </li>

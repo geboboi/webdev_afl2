@@ -20,22 +20,20 @@
                             <li class="ftcon-li">
                                 <span class="con-icon"><i class="bi bi-geo"></i></span>
                                 <span class="con-add contact-block">
-                                    <span>7882, Reliance GIDC</span>
-                                    <span>Chowk bazzar, New York</span>
+                                    <span>Jl. Penjaringan Asri X no. 30,</span>
+                                    <span>Rungkut, Surabaya</span>
                                 </span>
                             </li>
                             <li class="ftcon-li">
                                 <span class="con-icon"><i class="bi bi-telephone"></i></span>
                                 <div class="contact-block">
-                                    <a href="tel:(+91)123456789" class="con-add">(+00) 1 23 45 67 89</a>
-                                    <a href="tel:(+91)123456789" class="con-add">(+1) 1 23 45 67 89</a>
+                                    <a href="#" class="con-add">(+62) 87798165115</a>
                                 </div>
                             </li>
                             <li class="ftcon-li">
-                                <span class="con-icon"><i class="bi bi-envelope"></i></span>
+                                <span class="con-icon"><i class="bi bi-instagram"></i></span>
                                 <div class="contact-block">
-                                    <a href="mailto:demo@support.com" class="con-add">demo@support.com</a>
-                                    <a href="mailto:support@spacingtech.com" class="con-add">support@spacingtech.com</a>
+                                    <a href="https://instagram.com/michs_kitchenn" class="con-add">michs_kitchenn</a>
                                 </div>
                             </li>
                         </ul>
@@ -53,7 +51,7 @@
                 <div class="contact-map">
                     <div class="google-map-area">
                         <div class="map" id="map">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2353.2247386521262!2d112.62811824626638!3d-7.2821356375917645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fdff5340a0a5%3A0x357c05bea2fb03a!2sKos%20Ibu%20Ika!5e0!3m2!1sen!2sid!4v1699269655906!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.2653052175897!2d112.78434397554183!3d-7.324068672026631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fa955574ee7f%3A0xf1737a0d2d8d8cb0!2sJl.%20Penjaringan%20Asri%20X%20No.30%2C%20Penjaringan%20Sari%2C%20Kec.%20Rungkut%2C%20Surabaya%2C%20Jawa%20Timur%2060297!5e0!3m2!1sen!2sid!4v1699518160849!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
                 </div>

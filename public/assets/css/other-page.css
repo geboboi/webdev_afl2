@@ -1054,8 +1054,8 @@
     justify-content: center;
     margin-right: 15px;
     position: relative;
-    background-color: var(--font-color-header);
-    border: 2px solid var(--font-color-header);
+    background-color: #6b1732;
+    border: 2px solid #d6537c;
     border-radius: 100%;
     cursor: pointer;
     line-height: 0;
