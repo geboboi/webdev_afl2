@@ -24,5 +24,8 @@ class DatabaseSeeder extends Seeder
 
         // Event::Factory(5)->create();
         // Product::Factory(5)->create();
+        $this->call(EventSeeder::class);
+        $this->call(PromoSeeder::class);
+        $this->call(ProductSeeder::class);
     }
 }

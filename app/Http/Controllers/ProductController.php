@@ -23,9 +23,11 @@ class ProductController extends Controller
      */
     public function list()
     {
+        $products = Product::all();
         return view('product', [
-            'title'=> 'Products'
-        ] );
+            'title' => 'Products',
+            'products' => $products
+        ]);
     }
 
     /**
@@ -41,7 +43,6 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
     }
 
     /**
