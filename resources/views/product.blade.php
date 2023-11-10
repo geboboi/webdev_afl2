@@ -41,7 +41,7 @@
                                                                 <div class="single-product-wrap">
                                                                     <!-- product-img start -->
                                                                     <div class="product-image">
-                                                                        <a href="product/{{ $product['id']}}" class="pro-img">
+                                                                        <a href="product/{{ $product->id}}" class="pro-img">
                                                                             <img src="{{ asset($product->image) }}"
                                                                                 class="img-fluid img1" alt="p-1">
                                                                             <img src="{{ asset($product->image) }}"

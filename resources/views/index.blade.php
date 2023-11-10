@@ -110,10 +110,7 @@
                                 </div>
                                 <div class="abt-banner-desc">
                                     <h2>Pastel Tutup</h2>
-                                    <p class="sub-title">The perfect combination of bread and milk creates a nutritious
-                                        breakfast. Include milk and starches with essential nutrients for a day's work. The
-                                        cakes are made during the day to ensure the freshness of each cake. We always work
-                                        hard to create the best cakes with every meal.</p>
+                                    <p class="sub-title">Pastel panggang adalah hidangan yang umumnya terdiri dari kulit yang tipis dan renyah yang membalut berbagai macam isian. Proses panggang memberikan pastel ini tekstur luar yang garing sementara memastikan bahwa isian di dalamnya matang.</p>
                                 </div>
                             </div>
                             <div class="banner-grid">
@@ -124,11 +121,8 @@
                                     </a>
                                 </div>
                                 <div class="abt-banner-desc">
-                                    <h2>Kroket Rogut</h2>
-                                    <p class="sub-title">Banno breads are always made from skillful hands and from bakers
-                                        who put their heart into each cake. Banno always makes cakes by hand and guarantees
-                                        quality on every product. Creating the perfect meal for our customers is a fun every
-                                        day at banno.</p>
+                                    <h2>Kroket Ragout</h2>
+                                    <p class="sub-title">Kroket Ragout adalah hidangan yang terdiri dari kroket yang diisi dengan isian berupa ragout. Ini adalah makanan yang umumnya dianggap sebagai camilan atau hidangan pembuka, terutama di beberapa negara Eropa. Kroket adalah bola atau tabung berbentuk silinder yang terbuat dari campuran kentang yang dihaluskan atau puree, terkadang dicampur dengan mentega, susu, dan bumbu-bumbu lainnya. Ragout adalah hidangan krim atau saus yang biasanya terbuat dari daging cincang, sayuran, dan bumbu.</p>
                                 </div>
                             </div>
                         </div>

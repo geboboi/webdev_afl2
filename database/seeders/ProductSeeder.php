@@ -30,16 +30,16 @@ class ProductSeeder extends Seeder
         ]);
 
         DB::table('products')->insert([
-            'name' => "Kroket Rogut",
+            'name' => "Kroket Ragout",
             'price' => "12000",
-            'description' => "Saya mohon maaf, tetapi hingga pengetahuan saya yang terakhir pada Januari 2022, saya tidak memiliki informasi tentang Kroket Rogut. Sepertinya ini bukanlah hidangan yang dikenal secara umum atau populer di kalangan masyarakat pada saat itu. Jika Kroket Rogut adalah variasi lokal atau inovasi kuliner baru yang muncul setelah tanggal pembaruan pengetahuan saya, saya tidak memiliki akses ke informasi tersebut.",
+            'description' => "Kroket Ragout adalah hidangan yang terdiri dari kroket yang diisi dengan isian berupa ragout. Ini adalah makanan yang umumnya dianggap sebagai camilan atau hidangan pembuka, terutama di beberapa negara Eropa. Kroket adalah bola atau tabung berbentuk silinder yang terbuat dari campuran kentang yang dihaluskan atau puree, terkadang dicampur dengan mentega, susu, dan bumbu-bumbu lainnya. Ragout adalah hidangan krim atau saus yang biasanya terbuat dari daging cincang, sayuran, dan bumbu.",
             'image' => "assets/img/product/5.png",
             'promo_id' => 3,
         ]);
         DB::table('products')->insert([
             'name' => "Pastel Tutup Besar",
             'price' => "250000",
-            'description' => "Saya mohon maaf, tetapi hingga pengetahuan saya yang terakhir pada Januari 2022, saya tidak memiliki informasi tentang Kroket Rogut. Sepertinya ini bukanlah hidangan yang dikenal secara umum atau populer di kalangan masyarakat pada saat itu. Jika Kroket Rogut adalah variasi lokal atau inovasi kuliner baru yang muncul setelah tanggal pembaruan pengetahuan saya, saya tidak memiliki akses ke informasi tersebut.",
+            'description' => "Pastel panggang adalah hidangan yang umumnya terdiri dari kulit yang tipis dan renyah yang membalut berbagai macam isian. Proses panggang memberikan pastel ini tekstur luar yang garing sementara memastikan bahwa isian di dalamnya matang. Pastel ini memiliki tempat yang besar sehingga bisa dinikmati oleh banyak orang",
             'image' => "assets/img/product/2.png",
             'promo_id' => 4,
         ]);
@@ -47,7 +47,7 @@ class ProductSeeder extends Seeder
         DB::table('products')->insert([
             'name' => "Pastel Tutup Kecil",
             'price' => "12000",
-            'description' => "Saya mohon maaf, tetapi hingga pengetahuan saya yang terakhir pada Januari 2022, saya tidak memiliki informasi tentang Kroket Rogut. Sepertinya ini bukanlah hidangan yang dikenal secara umum atau populer di kalangan masyarakat pada saat itu. Jika Kroket Rogut adalah variasi lokal atau inovasi kuliner baru yang muncul setelah tanggal pembaruan pengetahuan saya, saya tidak memiliki akses ke informasi tersebut.",
+            'description' => "Pastel panggang adalah hidangan yang umumnya terdiri dari kulit yang tipis dan renyah yang membalut berbagai macam isian. Proses panggang memberikan pastel ini tekstur luar yang garing sementara memastikan bahwa isian di dalamnya matang. Pastel ini merupakan varian yang lebih kecil sehingga biasanya dinikmati untuk 1 orang",
             'image' => "assets/img/product/1.png",
             'promo_id' => 4,
         ]);
