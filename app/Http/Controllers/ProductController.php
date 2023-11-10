@@ -30,7 +30,6 @@ class ProductController extends Controller
             'title' => 'Products',
             'products' => $products
         ]);
-
     }
 
     /**
@@ -46,9 +45,10 @@ class ProductController extends Controller
      */
     public function show(Product $showproduct)
     {
-        return view('showproduct', [
-            'title' => 'Products Details',
-            'showproduct' => $showproduct
+        $product = Product::find($showproduct->id);
+        return view('product_detail', [
+            'title' => 'Product Details',
+            'product' => $product
         ]);
     }
 

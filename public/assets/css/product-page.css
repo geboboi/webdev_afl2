@@ -695,10 +695,10 @@
     color: #ffffff;
     font-size: 16px;
     padding: 0;
-    background-color: #333333;
+    background-color: #6b1732;
     text-transform: uppercase;
     font-weight: 400;
-    border: 2px solid #333333;
+    border: 2px solid #6b1732;
     border-radius: 0px;
     letter-spacing: 0.5px;
     box-shadow: 0px 0px 15px rgb(0 0 0 / 15%);
@@ -709,9 +709,9 @@
     justify-content: center;
 }
 .pro-detail-button a:hover {
-    color: #ffffff;
-    background-color: #c19d60;
-    border: 2px solid #c19d60;
+    color: #000000;
+    background-color: #ffffff;
+    border: 1px solid #000000;
 }
 
 /* pro-off wishlist css */

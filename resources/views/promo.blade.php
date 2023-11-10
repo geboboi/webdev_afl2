@@ -10,22 +10,15 @@
                         <h2>Hot Promos</h2>
                     </div>
                 </div>
+                
                 <div class="insta-slider owl-carousel owl-theme" id="insta-slider">
+                    @foreach ($events as $event)
                     <div class="item">
                         <a href="javascript:void(0)" class="banner-hover">
-                            <img src="{{asset('assets/img/insta/backery-instagram-01.jpg')}}" class="img-fluid" alt="backery-instagram-01">
+                            <img src="{{ asset($event->banner) }}" class="img-fluid" alt="event-banner">
                         </a>
                     </div>
-                    <div class="item">
-                        <a href="javascript:void(0)" class="banner-hover">
-                            <img src="{{asset('assets/img/insta/backery-instagram-02.jpg')}}" class="img-fluid" alt="backery-instagram-02">
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="javascript:void(0)" class="banner-hover">
-                            <img src="{{asset('assets/img/insta/backery-instagram-03.jpg')}}" class="img-fluid" alt="backery-instagram-03">
-                        </a>
-                    </div>
+                @endforeach
                 </div>
         </div>
     </div>

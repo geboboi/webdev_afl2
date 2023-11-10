@@ -7,8 +7,8 @@
                         <ul class="footer-list">
                             <li class="ftlink-li ft-info">
                                 <div class="footer-logo">
-                                    <a href="index-4.html" class="theme-footer-logo">
-                                        <img src="img/logo/logo4.png" class="img-fluid" alt="logo">
+                                    <a href="/" class="theme-footer-logo">
+                                        <img src="{{asset ('assets/img/logo.svg')}}" class="img-fluid" alt="logo">
                                     </a>
                                 </div>
                             </li>

@@ -38,14 +38,13 @@
                                                     <ul class="product-view" id="product-grid">
                                                         @foreach ($products as $product)
                                                             <li class="st-col-item st-col">
-
                                                                 <div class="single-product-wrap">
                                                                     <!-- product-img start -->
                                                                     <div class="product-image">
                                                                         <a href="product/{{ $product['id']}}" class="pro-img">
-                                                                            <img src="{{ $product->image }}"
+                                                                            <img src="{{ asset($product->image) }}"
                                                                                 class="img-fluid img1" alt="p-1">
-                                                                            <img src="{{ $product->image }}"
+                                                                            <img src="{{ asset($product->image) }}"
                                                                                 class="img-fluid img2" alt="p-2">
                                                                         </a>
                                                                         <!-- product-label start -->
@@ -54,7 +53,7 @@
                                                                         </div> -->
                                                                         <!-- product-label end -->
                                                                         <div class="product-action">
-                                                                            <a href="wishlist-product.html"
+                                                                            <a href="{{route('product.show', $product->id)}}"
                                                                                 class="wishlist-product">
                                                                                 <span class="tooltip-text">Wishlist</span>
                                                                                 <span class="wishlist-icon"><i
@@ -67,14 +66,12 @@
                                                                     <div class="product-content">
                                                                         <!-- product-title start -->
                                                                         <h6><a
-                                                                                href="product-template2.html">{{ $product->name }}</a>
+                                                                                href="{{route('product.show', $product->id)}}">{{ $product->name }}</a>
                                                                         </h6>
                                                                         <!-- product-title end -->
                                                                         <!-- product-price start -->
                                                                         <div class="price-box">
-                                                                            <span class="new-price">€11,00</span>
-                                                                            <span class="old-price">"Rp.
-                                                                                {{ $product->price }}"</span>
+                                                                            <span class="new-price">{{ 'Rp ' . number_format($product->price, 0, ',', '.') }}</span>
                                                                         </div>
                                                                         <!-- product-price end -->
                                                                         <!-- product-description start -->
@@ -83,7 +80,7 @@
                                                                         <!-- product-description end -->
                                                                         <!-- product-action start -->
                                                                         <div class="product-action">
-                                                                            <a href="wishlist-product.html"
+                                                                            <a href="{{route('product.show', $product->id)}}"
                                                                                 class="wishlist-product">
                                                                                 <span class="tooltip-text">Wishlist</span>
                                                                                 <span class="wishlist-icon"><i

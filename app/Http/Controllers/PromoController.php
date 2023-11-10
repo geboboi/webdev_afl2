@@ -13,9 +13,6 @@ class PromoController extends Controller
      */
     public function index()
     {
-        return view('promo', [
-            'title'=> 'Available Promos'
-        ] );
     }
 
     /**

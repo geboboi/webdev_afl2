@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PromoController;
 use Illuminate\Support\Facades\Route;
@@ -19,9 +20,9 @@ Route::get('/', [ProductController::class, 'index']);
 
 Route::get('/product', [ProductController::class, 'list']);
 
-Route::get('/product/{showproduct}', [ProductController::class, 'show']);
+Route::get('/product/{showproduct}', [ProductController::class, 'show'])->name('product.show');
 
-Route::get('/promo', [PromoController::class, 'index']);
+Route::get('/promo', [EventController::class, 'index']);
 
 Route::get('/about', function(){
     return view('about', [

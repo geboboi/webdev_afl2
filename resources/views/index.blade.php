@@ -45,7 +45,7 @@
                                         <div class="single-product-wrap">
                                             <!-- product-img start -->
                                             <div class="product-image">
-                                                <a href="product-template.html" class="pro-img">
+                                                <a href="#" class="pro-img">
                                                     <img src="{{ asset($product_home->image) }}" class="img-fluid img1"
                                                         alt="p-73">
                                                     <img src="{{ asset($product_home->image) }}" class="img-fluid img2"
@@ -54,12 +54,11 @@
                                             </div>
                                             <div class="product-content">
                                                 <!-- product-title start -->
-                                                <h6><a href="product-template.html">{{ $product_home->name }}</a></h6>
+                                                <h6><a href="#">{{ $product_home->name }}</a></h6>
                                                 <!-- product-title end -->
                                                 <!-- product-price start -->
                                                 <div class="price-box">
-                                                    <span class="new-price">$12.00</span>
-                                                    <span class="old-price">$18.00</span>
+                                                    <span class="new-price">{{ 'Rp ' . number_format($product_home->price, 0, ',', '.') }}</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -80,12 +79,11 @@
                                             </div>
                                             <div class="product-content">
                                                 <!-- product-title start -->
-                                                <h6><a href="product-template.html">{{ $product_home->name }}</a></h6>
+                                                <h6><a href="#">{{ $product_home->name }}</a></h6>
                                                 <!-- product-title end -->
                                                 <!-- product-price start -->
                                                 <div class="price-box">
-                                                    <span class="new-price">$12.00</span>
-                                                    <span class="old-price">$18.00</span>
+                                                    <span class="new-price">{{ 'Rp ' . number_format($product_home->price, 0, ',', '.') }}</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -95,7 +93,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
 
         <!-- banner start -->
@@ -107,12 +104,12 @@
                             <div class="banner-grid">
                                 <div class="single-banner banner-hover">
                                     <a href="javascript:void(0)" class="banner-img">
-                                        <img src="{{ asset('assets/img/banner/banner-03.jpg') }}" class="img-fluid"
+                                        <img src="{{ asset('assets/img/index-banner/1.svg') }}" class="img-fluid"
                                             alt="banner-03">
                                     </a>
                                 </div>
                                 <div class="abt-banner-desc">
-                                    <h2>Bread & Buttermilk</h2>
+                                    <h2>Pastel Tutup</h2>
                                     <p class="sub-title">The perfect combination of bread and milk creates a nutritious
                                         breakfast. Include milk and starches with essential nutrients for a day's work. The
                                         cakes are made during the day to ensure the freshness of each cake. We always work
@@ -123,12 +120,12 @@
                             <div class="banner-grid">
                                 <div class="single-banner banner-hover">
                                     <a href="javascript:void(0)" class="banner-img">
-                                        <img src="{{ asset('assets/img/banner/banner-04.jpg') }}" class="img-fluid"
+                                        <img src="{{ asset('assets/img/index-banner/2.svg') }}" class="img-fluid"
                                             alt="banner-04">
                                     </a>
                                 </div>
                                 <div class="abt-banner-desc">
-                                    <h2>The maker of the bread</h2>
+                                    <h2>Kroket Rogut</h2>
                                     <p class="sub-title">Banno breads are always made from skillful hands and from bakers
                                         who put their heart into each cake. Banno always makes cakes by hand and guarantees
                                         quality on every product. Creating the perfect meal for our customers is a fun every

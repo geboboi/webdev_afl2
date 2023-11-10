@@ -6,8 +6,8 @@
                 <div class="header-main">
                     <!-- header logo start -->
                     <div class="header-element logo">
-                        <a href="index-4.html" class="theme-header-logo">
-                            <img src="{{asset ('assets/img/logo/logo4.png')}}" class="img-fluid" alt="logo">
+                        <a href="/" class="theme-header-logo">
+                            <img src="{{asset ('assets/img/logo.svg')}}" class="img-fluid" alt="logo" width="100%">
                         </a>
                     </div>
                     <div class="header-element megamenu-content">
