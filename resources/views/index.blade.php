@@ -45,7 +45,7 @@
                                         <div class="single-product-wrap">
                                             <!-- product-img start -->
                                             <div class="product-image">
-                                                <a href="#" class="pro-img">
+                                                <a href="product/{{ $product_home['id']}}" class="pro-img">
                                                     <img src="{{ asset($product_home->image) }}" class="img-fluid img1"
                                                         alt="p-73">
                                                     <img src="{{ asset($product_home->image) }}" class="img-fluid img2"
@@ -54,7 +54,7 @@
                                             </div>
                                             <div class="product-content">
                                                 <!-- product-title start -->
-                                                <h6><a href="#">{{ $product_home->name }}</a></h6>
+                                                <h6><a href="product/{{ $product_home['id']}}">{{ $product_home->name }}</a></h6>
                                                 <!-- product-title end -->
                                                 <!-- product-price start -->
                                                 <div class="price-box">
@@ -70,7 +70,7 @@
                                         <div class="single-product-wrap">
                                             <!-- product-img start -->
                                             <div class="product-image">
-                                                <a href="product-template.html" class="pro-img">
+                                                <a href="product/{{ $product_home['id']}}" class="pro-img">
                                                     <img src="{{ asset($product_home->image) }}" class="img-fluid img1"
                                                         alt="p-73">
                                                     <img src="{{ asset($product_home->image) }}" class="img-fluid img2"
@@ -79,7 +79,7 @@
                                             </div>
                                             <div class="product-content">
                                                 <!-- product-title start -->
-                                                <h6><a href="#">{{ $product_home->name }}</a></h6>
+                                                <h6><a href="product/{{ $product_home['id']}}">{{ $product_home->name }}</a></h6>
                                                 <!-- product-title end -->
                                                 <!-- product-price start -->
                                                 <div class="price-box">
@@ -114,7 +114,6 @@
                                         breakfast. Include milk and starches with essential nutrients for a day's work. The
                                         cakes are made during the day to ensure the freshness of each cake. We always work
                                         hard to create the best cakes with every meal.</p>
-                                    <a href="collection.html" class="btn btn-style">Shop now</a>
                                 </div>
                             </div>
                             <div class="banner-grid">
@@ -130,7 +129,6 @@
                                         who put their heart into each cake. Banno always makes cakes by hand and guarantees
                                         quality on every product. Creating the perfect meal for our customers is a fun every
                                         day at banno.</p>
-                                    <a href="collection.html" class="btn btn-style">Shop now</a>
                                 </div>
                             </div>
                         </div>

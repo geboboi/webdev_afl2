@@ -85,6 +85,10 @@
                                         </div>
                                         <div class="product-info">
                                             <div class="product-inventory">
+                                                <div class="stock-inventory stock-more">
+                                                    <p>{{$product->description}}
+                                                    </p>
+                                                </div>
                                                 <div class="product-variant">
                                                     <h6>Availability:</h6>
                                                     <span class="stock-qty in-stock text-success">
