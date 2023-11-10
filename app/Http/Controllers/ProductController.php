@@ -26,7 +26,7 @@ class ProductController extends Controller
     public function list()
     {
         $products = Product::all();
-        return view('product', [
+        return view('products/product', [
             'title' => 'Products',
             'products' => $products
         ]);
@@ -46,7 +46,7 @@ class ProductController extends Controller
     public function show(Product $showproduct)
     {
         $product = Product::find($showproduct->id);
-        return view('product_detail', [
+        return view('products/product_detail', [
             'title' => 'Product Details',
             'product' => $product
         ]);
