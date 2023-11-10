@@ -9,7 +9,7 @@
     <!-- title -->
     <title>{{$title}}</title>
     <!-- favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/logo/favicon.png') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/logo/favicon.ico') }}">
     <!-- bootstrap css -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}">
     <!-- magnific-popup css -->

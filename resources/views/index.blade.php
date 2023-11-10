@@ -1,5 +1,6 @@
-@include('layouts.notifbar')
 @extends('layouts.template')
+@include('layouts.notifbar')
+
 @section('main_content')
     <main>
         <section class="slider-content">
@@ -142,8 +143,8 @@
                                     <a href="javascript:void(0)"><i class="feather-truck"></i></a>
                                     <div class="service-text">
                                         <h6>Shipping</h6>
-                                        <p>Our efficient shipping ensures that the delectable treats are delivered to your
-                                            doorstep with speed and care, preserving their freshness for you to savor.</p>
+                                        <p>Pengiriman kami yang efisien menjamin bahwa camilan lezat akan sampai di depan pintu Anda dengan cepat dan penuh perhatian, menjaga kesegaran mereka agar Anda dapat menikmatinya sepenuhnya.
+                                        </p>
                                     </div>
                                 </div>
                             </li>
@@ -152,7 +153,7 @@
                                     <a href="javascript:void(0)"><i class="feather-shield"></i></a>
                                     <div class="service-text">
                                         <h6>Safe payment</h6>
-                                        <p>Pay with the world's most popular and secure payment methods</p>
+                                        <p>Bayar dengan metode pembayaran paling populer dan aman di dunia.</p>
                                     </div>
                                 </div>
                             </li>
@@ -161,7 +162,8 @@
                                     <a href="javascript:void(0)"><i class="feather-shopping-cart"></i></a>
                                     <div class="service-text">
                                         <h6>Shop with confidence</h6>
-                                        <p>Our buyer protection covers your purchase from click to delivery.</p>
+                                        <p>Perlindungan pembeli kami mencakup pembelian Anda mulai dari klik hingga pengiriman.
+                                        </p>
                                     </div>
                                 </div>
                             </li>
