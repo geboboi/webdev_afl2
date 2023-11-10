@@ -19,6 +19,8 @@ Route::get('/', [ProductController::class, 'index']);
 
 Route::get('/product', [ProductController::class, 'list']);
 
+Route::get('/product/{showproduct}', [ProductController::class, 'show']);
+
 Route::get('/promo', [PromoController::class, 'index']);
 
 Route::get('/about', function(){

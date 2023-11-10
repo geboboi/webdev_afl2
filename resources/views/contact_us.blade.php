@@ -17,8 +17,11 @@
                     <!-- contact-detail start -->
                     <div class="get-info contact-detail">
                         <ul class="contact-info-list">
+
                             <li class="ftcon-li">
-                                <span class="con-icon"><i class="bi bi-geo"></i></span>
+                                <a href="https://www.google.com/maps/place/Jl.+Penjaringan+Asri+X+No.30,+Penjaringan+Sari,+Kec.+Rungkut,+Surabaya,+Jawa+Timur+60297/@-7.324074,112.786919,16z/data=!4m5!3m4!1s0x2dd7fa955574ee7f:0xf1737a0d2d8d8cb0!8m2!3d-7.324074!4d112.7869189?hl=en&entry=ttu">
+                                    <span class="con-icon"><i class="bi bi-geo"></i></span>
+                                </a>
                                 <span class="con-add contact-block">
                                     <span>Jl. Penjaringan Asri X no. 30,</span>
                                     <span>Rungkut, Surabaya</span>
@@ -31,9 +34,10 @@
                                 </div>
                             </li>
                             <li class="ftcon-li">
-                                <span class="con-icon"><i class="bi bi-instagram"></i></span>
+                                <a href="https://instagram.com/michs_kitchenn"> <span class="con-icon"><i class="bi bi-instagram"></i></span></a>
+
                                 <div class="contact-block">
-                                    <a href="https://instagram.com/michs_kitchenn" class="con-add">michs_kitchenn</a>
+                                    <a href="" class="con-add">michs_kitchenn</a>
                                 </div>
                             </li>
                         </ul>

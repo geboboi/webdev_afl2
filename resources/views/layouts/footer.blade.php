@@ -76,7 +76,7 @@
                             <p>
                                 <span>Copyright</span>
                                 <span class="copy-icon"><i class="far fa-copyright"></i></span>
-                                <span>2023 by willcastech<sup>TM</sup></span>
+                                <span>2023 by MotherGabzTech<sup>TM</sup></span>
                             </p>
                         </li>
                         {{-- <li class="grid-wrapper grid-payment">

@@ -13,8 +13,10 @@ class ProductController extends Controller
      */
     public function index()
     {
+        $products_home = Product::latest()->take(3)->get();
         return view('index', [
-            'title' => "Mich's Kitchen"
+            'title' => "Mich's Kitchen",
+            'products_home' => $products_home
         ]);
     }
 
@@ -28,6 +30,7 @@ class ProductController extends Controller
             'title' => 'Products',
             'products' => $products
         ]);
+
     }
 
     /**
@@ -41,8 +44,12 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Product $product)
+    public function show(Product $showproduct)
     {
+        return view('showproduct', [
+            'title' => 'Products Details',
+            'showproduct' => $showproduct
+        ]);
     }
 
     /**
