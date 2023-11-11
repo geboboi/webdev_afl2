@@ -1,3 +1,5 @@
+<?php use Carbon\Carbon; ?>
+
 @extends('layouts.template')
 
 @section('main_content')
@@ -41,7 +43,8 @@
                                                                 <div class="single-product-wrap">
                                                                     <!-- product-img start -->
                                                                     <div class="product-image">
-                                                                        <a href="product/{{ $product->id}}" class="pro-img">
+                                                                        <a href="product/{{ $product->id }}"
+                                                                            class="pro-img">
                                                                             <img src="{{ asset($product->image) }}"
                                                                                 class="img-fluid img1" alt="p-1">
                                                                             <img src="{{ asset($product->image) }}"
@@ -49,30 +52,38 @@
                                                                         </a>
                                                                         <!-- product-label start -->
                                                                         <!-- <div class="product-label">
-                                                                            <span class="new-sale-title">New</span>
-                                                                        </div> -->
+                                                                                <span class="new-sale-title">New</span>
+                                                                            </div> -->
                                                                         <!-- product-label end -->
-                                                                        <div class="product-action">
-                                                                            <a href="{{route('product.show', $product->id)}}"
-                                                                                class="wishlist-product">
-                                                                                <span class="tooltip-text">Wishlist</span>
-                                                                                <span class="wishlist-icon"><i
-                                                                                        class="feather-heart"></i></span>
-                                                                            </a>
-                                                                        </div>
+
                                                                     </div>
                                                                     <!-- product-img end -->
                                                                     <!-- product-content start -->
                                                                     <div class="product-content">
                                                                         <!-- product-title start -->
                                                                         <h6><a
-                                                                                href="{{route('product.show', $product->id)}}">{{ $product->name }}</a>
+                                                                                href="{{ route('product.show', $product->id) }}">{{ $product->name }}</a>
                                                                         </h6>
                                                                         <!-- product-title end -->
                                                                         <!-- product-price start -->
-                                                                        <div class="price-box">
-                                                                            <span class="new-price">{{ 'Rp ' . number_format($product->price, 0, ',', '.') }}</span>
-                                                                        </div>
+                                                                        @php $sekarang = Carbon::now(); @endphp
+                                                                        @if ($sekarang > $product->start_date && $sekarang < $product->end_date)
+                                                                            @php
+                                                                                $newprice = $product->price - ($product->price * $product->percentage) / 100;
+                                                                            @endphp
+                                                                            <div class="price-box">
+                                                                                <span class="new-price">
+                                                                                    {{ 'Rp ' . number_format($newprice, 0, ',', '.') }}</span>
+                                                                                <span
+                                                                                    class="old-price">{{ 'Rp ' . number_format($product->price, 0, ',', '.') }}</span>
+                                                
+                                                                            </div>
+                                                                        @else
+                                                                            <div class="price-box">
+                                                                                <span class="new-price">
+                                                                                    {{ 'Rp ' . number_format($product->price, 0, ',', '.') }}</span>
+                                                                            </div>
+                                                                        @endif
                                                                         <!-- product-price end -->
                                                                         <!-- product-description start -->
                                                                         <p class="product-description">
@@ -80,7 +91,7 @@
                                                                         <!-- product-description end -->
                                                                         <!-- product-action start -->
                                                                         <div class="product-action">
-                                                                            <a href="{{route('product.show', $product->id)}}"
+                                                                            <a href="{{ route('product.show', $product->id) }}"
                                                                                 class="wishlist-product">
                                                                                 <span class="tooltip-text">Wishlist</span>
                                                                                 <span class="wishlist-icon"><i

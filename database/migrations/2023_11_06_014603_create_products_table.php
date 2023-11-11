@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('price');
             $table->text('description');
             $table->string('image');
-            $table->foreignIdFor(\App\Models\Promo::class);
+            $table->foreignIdFor(\App\Models\Promo::class)->nullable(true);
             $table->timestamps();
         });
     }

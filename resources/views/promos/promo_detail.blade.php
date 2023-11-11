@@ -9,7 +9,7 @@
                         <div class="section-capture">
                             <div class="section-title">
                                 <div class="section-cont-title">
-                                    <h2>Deal of the day</h2>
+                                    <h2>{{$event->event_name}} Sale</h2>
                                     <span class="sub-title">Best offer</span>
                                 </div>
                             </div>
@@ -22,7 +22,7 @@
 
                                             <div class="single-product-wrap">
                                                 <div class="product-image">
-                                                    <a href="product-template.html" class="pro-img">
+                                                    <a href="{{route('product.show', $product->id)}}" class="pro-img">
                                                         <img src="{{ asset($product->image) }}" class="img-fluid"
                                                             alt="deal-01">
                                                     </a>
@@ -33,7 +33,7 @@
                                                         <span class="percent-count"> {{ $product->percentage }}%</span>
                                                     </div>
                                                     <h6>
-                                                        <a href="#">{{$product->name}} </a>
+                                                        <a href="{{route('product.show', $product->id)}}">{{$product->name}} </a>
                                                     </h6>
                                                     <div class="price-box">
                                                         @php
@@ -45,7 +45,7 @@
                                                         <span class="new-price">{{ 'Rp ' . number_format($newprice, 0, ',', '.') }}</span>
 
                                                         <span class="old-price">{{ 'Rp ' . number_format($product->price, 0, ',', '.') }}</span>
-                                                    </div>                                                    
+                                                    </div>
                                                     <div class="product-timer">
                                                         <ul class="timer-section">
                                                             <li class="timer-count">
@@ -53,7 +53,7 @@
                                                             </li>
                                                         </ul>
                                                     </div>
-                                                    
+
                                                 </div>
                                             </div>
                                         </div>

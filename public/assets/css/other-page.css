@@ -79,12 +79,12 @@
     .about-content .about-banner .about-banner-area {
         margin-top: 80px;
     }
-} 
+}
 @media (max-width: 767px) {
     .about-content .about-banner .about-banner-area {
         margin-top: 60px;
     }
-} 
+}
 
 /* about-content grid css */
 .about-content .about-banner .about-banner-area ul {
@@ -282,7 +282,7 @@
     position: relative;
     z-index: 1;
 }
-.project-count .single-count ul li .count-info::before, 
+.project-count .single-count ul li .count-info::before,
 .project-count .single-count ul li .count-info::after {
     content: "";
     position: absolute;
@@ -390,7 +390,7 @@
         width: calc(50% - 12px);
         margin: 60px 0px 0px 12px;
     }
-}   
+}
 @media (max-width: 479px) {
     .about-team .our-team .team-wrap ul li.team-content {
         width: calc(100% - 12px);
@@ -402,7 +402,7 @@
     padding-top: 24px;
 }
 .about-team .our-team .team-wrap ul li.team-content .team-info h6 {
-    font-size: 18px;    
+    font-size: 18px;
 }
 .about-team .our-team .team-wrap ul li.team-content .team-info span {
     display: block;
@@ -470,7 +470,7 @@
     .about-area-2 .about-content .about-banner-area:first-of-type {
         margin-top: 0px;
     }
-    .about-area-2 .about-content .about-banner-area, 
+    .about-area-2 .about-content .about-banner-area,
     .about-area-2 .about-content .about-banner-area:nth-of-type(even) {
         flex-direction: column;
     }
@@ -478,11 +478,11 @@
     .about-area-2 .about-content .about-banner-area .abt-banner-desc {
         width: 100%;
     }
-    .about-area-2 .about-content .about-banner-area:nth-of-type(odd) .abt-banner-desc,    
+    .about-area-2 .about-content .about-banner-area:nth-of-type(odd) .abt-banner-desc,
     .about-area-2 .about-content .about-banner-area:nth-of-type(even) .abt-banner-desc {
         padding: 24px 0px 0px;
     }
-} 
+}
 
 /* play button css */
 .about-area-2 .about-content .about-banner-area .single-banner a.banner-img span {
@@ -510,7 +510,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 100%;    
+    border-radius: 100%;
     box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
 }
 .about-area-2 .about-content .about-banner-area .single-banner a.banner-img span::before {
@@ -713,7 +713,7 @@
 .project-count-area .single-count ul li.count-wrap .count-info a span.count-icon i {
     display: block;
     line-height: 0;
-} 
+}
 .project-count-area .single-count ul li.count-wrap .count-info span.count-title {
     font-size: 18px;
     margin-top: 24px;
@@ -1261,7 +1261,7 @@ ul.form-fill {
     flex-wrap: wrap;
     margin: -25px 0px 0px -30px;
 }
-ul.form-fill li.name, 
+ul.form-fill li.name,
 ul.form-fill li.email {
     width: calc(50% - 30px);
 }
@@ -1276,7 +1276,7 @@ ul.form-fill li label {
     cursor: auto;
     margin-bottom: 11px;
 }
-ul.form-fill li input, 
+ul.form-fill li input,
 ul.form-fill li textarea {
     display: block;
     width: 100%;
@@ -1288,8 +1288,8 @@ textarea {
     display: block;
     resize: none;
 }
-@media (max-width: 767px) { 
-    ul.form-fill li.name, 
+@media (max-width: 767px) {
+    ul.form-fill li.name,
     ul.form-fill li.email {
         width: calc(100% - 12px);
     }
@@ -1623,7 +1623,7 @@ textarea {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: relative;      
+    position: relative;
 }
 .que-ans ul li a.question h6.que,
 .que-ans ul li a.question h6.que-accordian {
@@ -1637,7 +1637,7 @@ textarea {
 .que-ans ul li a.question[aria-expanded=true] h6.que-accordian {
     color: var(--font-color-primary);
 }
-.que-ans ul li a.question h6.que, 
+.que-ans ul li a.question h6.que,
 .que-ans ul li a.question[aria-expanded=false] h6.que {
     color: var(--font-color-header);
 }
@@ -2371,7 +2371,7 @@ ul.help-wrap li.desk-wrap .help-desk-info .help-desk-text p {
 }
 .checkout-area .billing-area form .billing-form ul.billing-ul.input-2 li.billing-li.input label,
 .checkout-area .billing-area form .billing-form ul.billing-ul.input-2 li.billing-li label,
-.checkout-area .billing-area form .billing-form ul.billing-ul li label {    
+.checkout-area .billing-area form .billing-form ul.billing-ul li label {
     font-size: 14px;
     color: var(--font-color-header);
     font-weight: 500;
@@ -2399,7 +2399,7 @@ ul.help-wrap li.desk-wrap .help-desk-info .help-desk-text p {
     border-top: 1px solid var(--theme-border-color);
 }
 .checkout-area .billing-area .billing-details form h2 {
-    font-size: 24px;  
+    font-size: 24px;
 }
 .checkout-area .billing-area .billing-details ul.shipping-form {
     margin-top: 19px;
@@ -2607,29 +2607,29 @@ ul.help-wrap li.desk-wrap .help-desk-info .help-desk-text p {
 }
 /* .checkout-style-2 .billing-area form h2 {
     font-size: 22px;
-} */ 
+} */
 .checkout-style-2 .billing-area form .billing-form {
     margin-top: 24px;
-} 
+}
 .checkout-style-2 .billing-area form .billing-form ul.billing-ul {
     width: 100%;
     margin-top: 15px;
-} 
+}
 .checkout-style-2 .billing-area form .billing-form ul.billing-ul:first-child {
     margin-top: 0px;
-} 
+}
 .checkout-style-2 .billing-area form .billing-form ul.billing-ul.input-2 {
     display: flex;
     flex-wrap: wrap;
-} 
+}
 .checkout-style-2 .billing-area form .billing-form ul.billing-ul.input-2 li.billing-li {
     width: calc(50% - 15px);
     margin-left: 15px;
-} 
+}
 .checkout-style-2 .billing-area form .billing-form ul.billing-ul.input-2 li.billing-li.input {
     width: calc(50% - 0px);
     margin-left: 0px;
-} 
+}
 .checkout-style-2 .billing-area form .billing-form ul.billing-ul.input-2 li.billing-li.input label,
 .checkout-style-2 .billing-area form .billing-form ul.billing-ul.input-2 li.billing-li label,
 .checkout-style-2 .billing-area form .billing-form ul.billing-ul li.billing-li {
@@ -2642,10 +2642,10 @@ ul.help-wrap li.desk-wrap .help-desk-info .help-desk-text p {
     width: 100%;
     height: 45px;
     margin-top: 10px;
-}  
+}
 .checkout-style-2 .billing-area form .billing-form ul.billing-ul li.billing-li option {
     margin-top: 10px;
-} 
+}
 .checkout-style-2 .billing-area .billing-details form h2 {
     font-size: 22px;
 }
@@ -2705,11 +2705,11 @@ ul.help-wrap li.desk-wrap .help-desk-info .help-desk-text p {
 }
 .ship-wrapper ul.popup-inner-ul li.popup-li label {
     display: block;
-} 
+}
 .ship-wrapper ul.popup-inner-ul li.popup-li input {
     width: 100%;
     margin-top: 10px;
-} 
+}
 .ship-wrapper ul.popup-inner-ul li.popup-li select {
     width: 100%;
     height: 45px;
@@ -2863,7 +2863,7 @@ ul.help-wrap li.desk-wrap .help-desk-info .help-desk-text p {
     }
 }
 .checkout-style-2 .order-area .order-history h2 {
-    font-size: 18px;    
+    font-size: 18px;
 }
 .checkout-style-2 .order-area .order-history .order-inf {
     margin-top: 23px;
@@ -2873,7 +2873,7 @@ ul.help-wrap li.desk-wrap .help-desk-info .help-desk-text p {
     padding-top: 13px;
     display: flex;
     align-items: center;
-    justify-content: space-between;   
+    justify-content: space-between;
 }
 .checkout-style-2 .order-area .order-history .order-inf .order-details:first-child {
     margin-top: 0px;
@@ -3004,7 +3004,7 @@ ul.help-wrap li.desk-wrap .help-desk-info .help-desk-text p {
 .order-area .order-delivery ul.delivery-payment li {
     width: calc(50% - 30px);
     margin: 30px 0px 0px 30px;
-    border-right: 1px solid var(--theme-border-color); 
+    border-right: 1px solid var(--theme-border-color);
 }
 .order-area .order-delivery ul.delivery-payment li:last-child {
     border-right: none;
@@ -3452,7 +3452,7 @@ ul.help-wrap li.desk-wrap .help-desk-info .help-desk-text p {
     padding-bottom: 12px;
     border-bottom: 1px solid var(--theme-border-color);
     line-height: 1;
-} 
+}
 .order-histry-area .order-history .profile-form {
     width: calc(65% - 30px);
     margin-left: 30px;
@@ -3501,7 +3501,7 @@ ul.help-wrap li.desk-wrap .help-desk-info .help-desk-text p {
 }
 .order-histry-area .order-history .profile-form form ul.pro-submit li input {
     margin-right: 5px;
-}  
+}
 
 /* cutsom checkbox css */
 ul.pro-submit li.label-info label.box-area {
@@ -3596,7 +3596,7 @@ ul.pro-submit li.label-info label.box-area span.cust-check::after {
     font-weight: 500;
     padding-bottom: 12px;
     border-bottom: 1px solid var(--theme-border-color);
-    line-height: 1;   
+    line-height: 1;
 }
 .order-histry-area .order-history .profile-address form ul.add-label-input {
     display: flex;
@@ -3681,7 +3681,7 @@ ul.pro-submit li.label-info label.box-area span.cust-check::after {
     .order-histry-area .order-history .profile-wishlist {
         width: calc(100% - 30px);
         margin-top: 25px;
-        margin-left: 30px;  
+        margin-left: 30px;
     }
 }
 @media (max-width: 479px) {
@@ -3874,7 +3874,7 @@ ul.pro-submit li.label-info label.box-area span.cust-check::after {
         width: calc(100% - 30px);
         margin-top: 30px;
     }
-} 
+}
 @media(max-width: 479px) {
     .order-histry-area .order-history .profile-tickets {
         overflow-x: auto;
@@ -3886,7 +3886,7 @@ ul.pro-submit li.label-info label.box-area span.cust-check::after {
 
 /* billing page css */
 .billing-area .billing-title h4 {
-    font-size: 20px; 
+    font-size: 20px;
 }
 .billing-area .billing-address-1 {
     padding-top: 15px;
@@ -3986,7 +3986,7 @@ ul.pro-submit li.label-info label.box-area span.cust-check::after {
     color: var(--box-body-bgcolor);
     background-color: var(--font-color-header);
     border: 2px solid var(--font-color-header);
-}   
+}
 @media (max-width: 767px) {
     .billing-area .billing-title {
         margin-top: 8px;
@@ -4232,7 +4232,7 @@ ul.pro-submit li.label-info label.box-area span.cust-check::after {
 /* return page css */
 .return-policy .return {
     margin-bottom: 30px;
-} 
+}
 .return-policy .return span {
     display: block;
     width: 40px;
@@ -4253,7 +4253,7 @@ ul.pro-submit li.label-info label.box-area span.cust-check::after {
     margin-bottom: 24px;
     font-weight: 600;
     background-color: var(--font-color-primary);
-}      
+}
 .return-policy .return .return-content p {
     margin-top: 15px;
 }
@@ -4272,7 +4272,7 @@ ul.pro-submit li.label-info label.box-area span.cust-check::after {
         font-size: 18px;
         margin-bottom: 20px;
     }
-}  
+}
 
 /* payment page css */
 .payment-policy .payment {
@@ -4317,7 +4317,7 @@ ul.pro-submit li.label-info label.box-area span.cust-check::after {
         font-size: 18px;
         margin-bottom: 20px;
     }
-}  
+}
 
 /* search-page css */
 .search-page .search-title {
@@ -4365,7 +4365,7 @@ ul.pro-submit li.label-info label.box-area span.cust-check::after {
     width: calc(25% - 30px);
     margin-left: 30px;
     margin-top: 30px;
-} 
+}
 @media (max-width: 1199px) {
     .search-page .search-pro-area .search-pro-items ul.search-view li.st-col-item {
         width: calc(33.33% - 30px);
@@ -4378,7 +4378,7 @@ ul.pro-submit li.label-info label.box-area span.cust-check::after {
 }
 @media (max-width: 767px) {
     .search-page .search-pro-area .search-pro-items ul.search-view {
-        margin-left: -12px; 
+        margin-left: -12px;
     }
 }
 @media (max-width: 320px) {
@@ -4487,7 +4487,7 @@ ul.pro-submit li.label-info label.box-area span.cust-check::after {
     .sit-map-area ul.site-map-main {
         width: 50%;
     }
-    .sit-map-area ul.site-map-main:nth-child(1), 
+    .sit-map-area ul.site-map-main:nth-child(1),
     .sit-map-area ul.site-map-main:nth-child(2) {
         margin-top: 0px;
     }
@@ -4496,7 +4496,7 @@ ul.pro-submit li.label-info label.box-area span.cust-check::after {
     .sit-map-area ul.site-map-main {
         width: 100%;
     }
-    .sit-map-area ul.site-map-main:nth-child(2), 
+    .sit-map-area ul.site-map-main:nth-child(2),
     .sit-map-area ul.site-map-main:nth-child(3) {
         margin-top: 20px;
     }
@@ -4547,7 +4547,7 @@ ul.pro-submit li.label-info label.box-area span.cust-check::after {
 }
 .add-area .address-content ul.pro-submit {
     margin-top: 30px;
-} 
+}
 .add-area .address-content ul.address-input li.type-add {
     width: calc(50% - 30px);
     margin-left: 30px;
@@ -4632,7 +4632,7 @@ ul.pro-submit li.label-info label.box-area span.cust-check::after {
 }
 .coming-soon-area .customer-area .customer-content .comming-wrap .acc-form .image {
     display: none;
-}  
+}
 .coming-soon-area .customer-area::after {
     content: "";
     position: absolute;

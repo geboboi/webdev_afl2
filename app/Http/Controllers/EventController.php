@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Event;
 use App\Http\Requests\StoreEventRequest;
 use App\Http\Requests\UpdateEventRequest;
+use Illuminate\Support\Facades\DB;
+
 
 class EventController extends Controller
 {
@@ -39,9 +41,23 @@ class EventController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Event $event)
+    public function show($event)
     {
-        //
+        $products = DB::table('products')
+            ->join('promos', 'products.promo_id', '=', 'promos.id')
+            ->join('events', 'promos.event_id', '=', 'events.id')
+            ->select('promos.*', 'events.*','products.*')
+            ->where('events.id', '=', $event)
+            ->get();
+            $event = Event::find($event);
+
+        return view('promos/promo_detail', [
+            'title' => ' Sale',
+            'products' => $products,
+            'event' => $event
+        ]);
+                // return json_encode($event);
+
     }
 
     /**

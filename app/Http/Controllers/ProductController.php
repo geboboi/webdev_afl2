@@ -6,6 +6,7 @@ use App\Models\Product;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Promo;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -26,7 +27,12 @@ class ProductController extends Controller
      */
     public function list()
     {
-        $products = Product::all();
+        $products = DB::table('products')
+            ->leftJoin('promos', 'products.promo_id', '=', 'promos.id')
+            ->leftJoin('events', 'promos.event_id', '=', 'events.id')
+            ->select('promos.*', 'events.*', 'products.*')
+            ->get();
+
         return view('products/product', [
             'title' => 'Products',
             'products' => $products
@@ -38,7 +44,6 @@ class ProductController extends Controller
      */
     public function store(StoreProductRequest $request)
     {
-        
     }
 
     /**
@@ -46,11 +51,18 @@ class ProductController extends Controller
      */
     public function show(Product $showproduct)
     {
-        $product = Product::find($showproduct->id);
+        $products = DB::table('products')
+            ->leftJoin('promos', 'products.promo_id', '=', 'promos.id')
+            ->leftJoin('events', 'promos.event_id', '=', 'events.id')
+            ->select('promos.*', 'events.*', 'products.*')
+            ->where('products.id', '=', $showproduct->id)
+            ->first();
+
         return view('products/product_detail', [
             'title' => 'Product Details',
-            'product' => $product
+            'product' => $products
         ]);
+        // return json_encode($products);
     }
 
     /**

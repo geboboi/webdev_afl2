@@ -7,17 +7,17 @@
             <div class="home-slider owl-carousel owl-theme" id="home-slider">
                 <div class="item active">
                     <div class="slide-image">
-                        <img src="{{ asset('assets/img/slider/cake-slider-06.jpg') }}" class="img-fluid desk-img"
+                        <img src="{{ asset('assets/img/index-banner/pasteltuts.jpg') }}" class="img-fluid desk-img"
                             alt="cake-slider-06">
-                        <img src="{{ asset('assets/img/slider/mobile-slider-07.jpg') }}" class="img-fluid mobile-img"
+                        <img src="{{ asset('assets/img/index-banner/pasteltuts.jpg') }}" class="img-fluid mobile-img"
                             alt="mobile-slider-07">
                         <div class="container slider-info-content">
                             <div class="row">
                                 <div class="col">
                                     <div class="slider-text-info slider-content-center slider-text-center">
-                                        <h2 class="e1"><span>Chocolate Cup Cake</span></h2>
-                                        <p class="e1">Chocolate cup cake with dried fruit</p>
-                                        <a href="collection.html" class="btn btn-style e1">Shop now</a>
+                                        <h2 class="e1"><span>Mich's Kitchen</span></h2>
+                                        <p class="e1">Pastry Professionalist</p>
+                                        <a href="/product" class="btn btn-style e1">Buy now</a>
                                     </div>
                                 </div>
                             </div>

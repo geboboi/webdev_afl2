@@ -24,7 +24,7 @@ Route::get('/product/{showproduct}', [ProductController::class, 'show'])->name('
 
 Route::get('/promo', [EventController::class, 'index']);
 
-Route::get('/promo/{promo}', [PromoController::class, 'index'])->name('promo.detail');
+Route::get('/promo/{promo}', [EventController::class, 'show'])->name('promo.detail');
 
 
 
