@@ -1,3 +1,4 @@
+<?php use Carbon\Carbon; ?>
 @extends('layouts.template')
 @section('main_content')
 <section class="instagram-warp bt section-ptb">
@@ -10,14 +11,18 @@
                         <h2>Hot Promos</h2>
                     </div>
                 </div>
-                
+                @php $sekarang = Carbon::now(); @endphp
                 <div class="insta-slider owl-carousel owl-theme" id="insta-slider">
                     @foreach ($events as $event)
+                    @if ($sekarang > $event->start_date && $sekarang < $event->end_date )
                     <div class="item">
-                        <a href="javascript:void(0)" class="banner-hover">
+                        <a href="{{route('promo.detail', $event->id)}}" class="banner-hover">
                             <img src="{{ asset($event->banner) }}" class="img-fluid" alt="event-banner">
                         </a>
                     </div>
+                        
+                    @endif
+                    
                 @endforeach
                 </div>
         </div>

@@ -1014,7 +1014,7 @@ $(window).on('load',function(){
     /*==============================
        Deal-timer js
     ==============================*/
-    var deadline1 = new Date("december 30, 2023 23:59:59").getTime();
+    var deadline1 = new Date("december 15, 2023 23:59:59").getTime();
     var x = setInterval(function() {
         var currentTime = new Date().getTime();
         var t = deadline1 - currentTime;

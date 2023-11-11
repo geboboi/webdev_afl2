@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Promo extends Model
 {
@@ -12,4 +13,7 @@ class Promo extends Model
     protected $fillable = [
         'percentage', 'product_id', 'event_id'
     ];
+    public function product(){
+        return $this->hasMany(Product::class);
+    }
 }

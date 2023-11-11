@@ -5,16 +5,39 @@ namespace App\Http\Controllers;
 use App\Models\Promo;
 use App\Http\Requests\StorePromoRequest;
 use App\Http\Requests\UpdatePromoRequest;
+use App\Models\Event;
+use Illuminate\Support\Facades\DB;
 
 class PromoController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index($showpromo)
     {
+        $products = DB::table('products')
+            ->join('promos', 'products.promo_id', '=', 'promos.id')
+            ->join('events', 'promos.event_id', '=', 'events.id')
+            ->select('products.*', 'promos.*', 'events.*')
+            ->where('events.id', '=', $showpromo)
+            ->get();
+
+        return view('promos/promo_detail', [
+            'title' => ' Sale',
+            'products' => $products
+            // 'promos' => $promo
+        ]);
+        // return json_encode($products);
     }
 
+    public function discount($id)
+    {
+        $promo = Promo::with('product')->find($id);
+        return view('promos/promo_detail', [
+            'title' => ' Sale',
+            'promos' => $promo
+        ]);
+    }
     /**
      * Show the form for creating a new resource.
      */

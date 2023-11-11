@@ -375,7 +375,7 @@ $(window).on('load',function(){
         deal js
     ==============================*/
     if ($('#day1').length) {
-        var deadline1 = new Date("december 30, 2026 23:59:59").getTime();
+        var deadline1 = new Date("december 30, 2023 23:59:59").getTime();
         var x = setInterval(function() {
             var currentTime = new Date().getTime();
             var t = deadline1 - currentTime;

@@ -12,4 +12,9 @@ class Event extends Model
     protected $fillable = [
         'event_name', 'description', 'start_date', 'end_date', 'banner'
     ];
+
+    public function promos()
+    {
+        return $this->hasMany(Promo::class, 'event_id');
+    }
 }

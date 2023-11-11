@@ -3647,9 +3647,8 @@ ul.social-icon li a:hover span.icon-title{
     width: 250px;
 }
 .product-timer ul.timer-section li.timer-count {
-    width: 25%;
     padding: 10px 15px;
-    text-align: center;
+    text-align: left;
 }
 .product-timer ul.timer-section li.timer-count:nth-child(odd) {
     background-color: #f9f9f9;
