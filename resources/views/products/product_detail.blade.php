@@ -118,7 +118,7 @@
                                         <div class="product-info">
                                             <form method="post" class="cart">
                                                 <div class="pro-detail-button">
-                                                    <a href="https://wa.me/6287798165115?text=Halo%20kak,%20aku%20mau%20order%20dong%20%0ANama%20produk%20:%20{{$product->name}}%20%0AJumlah%20:%0A%0A" class="btn btn-cart btn_theme">
+                                                    <a href="https://wa.me/6287798165115?text=Halo%20kak,%20aku%20mau%20order%20dongg~%20%0ANama%20produk%20:%20{{$product->name}}%20%0AJumlah%20:%20" class="btn btn-cart btn_theme">
                                                         <span>Buy now</span>
                                                     </a>
                                                 </div>
@@ -162,7 +162,7 @@
                                                                 style="color: #e515c2;"></i></a>
                                                     </li>
                                                     <li class="whatsapp">
-                                                        <a href="https://in.pinterest.com/" class="whatsapp"><i
+                                                        <a href="https://wa.me/6287798165115/" class="whatsapp"><i
                                                                 class="fa-brands fa-whatsapp"
                                                                 style="color: #369900;"></i></a>
                                                     </li>

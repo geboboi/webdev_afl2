@@ -26,7 +26,7 @@ class ProductSeeder extends Seeder
             'price' => "12000",
             'description' => "Lumpia adalah salah satu makanan ringan yang terkenal di berbagai negara Asia, termasuk Indonesia, Filipina, dan Tiongkok. Di Indonesia, lumpia sering dianggap sebagai salah satu camilan yang populer. Ada dua jenis lumpia yang umumnya dikenal, yaitu lumpia basah dan lumpia goreng.",
             'image' => "assets/img/product/4.png",
-            'promo_id' => 2,
+            'promo_id' => null,
         ]);
 
         DB::table('products')->insert([
