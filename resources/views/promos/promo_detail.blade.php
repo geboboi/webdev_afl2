@@ -39,6 +39,7 @@
                                                         @php
                                                             $dueDate = Carbon::parse($product->end_date);
                                                             $date = $dueDate->diffForHumans();
+                                                            $uppercaseDate = strtoupper($date);
                                                             $newprice = $product->price - ($product->price * $product->percentage / 100);
                                                         @endphp
 
@@ -49,7 +50,7 @@
                                                     <div class="product-timer">
                                                         <ul class="timer-section">
                                                             <li class="timer-count">
-                                                                <span class="timer-text">{{$date}}</span>
+                                                                <span class="timer-text">{{$uppercaseDate}}</span>
                                                             </li>
                                                         </ul>
                                                     </div>
