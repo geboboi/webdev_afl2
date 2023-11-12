@@ -8,7 +8,7 @@
                             <li class="ftlink-li ft-info">
                                 <div class="footer-logo">
                                     <a href="/" class="theme-footer-logo">
-                                        <img src="{{asset ('assets/img/logo.svg')}}" class="img-fluid" alt="logo">
+                                        <img src="{{ asset('assets/img/logo.svg') }}" class="img-fluid" alt="logo">
                                     </a>
                                 </div>
                             </li>
@@ -34,7 +34,8 @@
                                         <div class="footer-social">
                                             <ul class="social-icon">
                                                 <li>
-                                                    <a href="https://instagram.com/michs_kitchenn"><span class="icon-title">Instagram</span></a>
+                                                    <a href="https://instagram.com/michs_kitchenn"><span
+                                                            class="icon-title">Instagram</span></a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -95,3 +96,49 @@
         </div>
     </div>
 </footer>
+<!-- mobile-menu start -->
+<div class="mobile-menu" id="menu-toggle">
+    <div class="main-menu-area">
+        <!-- box-header start -->
+        <div class="box-header"><button class="close-menu" type="button"><i class="feather-x"></i></button></div>
+        <!-- box-header end -->
+        <div class="megamenu-content">
+            <div class="mainwrap collapse show" id="resp-main">
+                <ul class="main-menu">
+                    <li class="menu-link">
+                        <a href="#resp-home" class="link-title link-title-lg">
+                            <span class="sp-link-title">Home</span>
+                        </a>
+                    </li>
+                    <li class="menu-link">
+           
+                        <a href="/product" class="link-title link-title-lg">
+                            <span class="sp-link-title">Product</span>
+                        </a>
+                    </li>
+                    <li class="menu-link">
+                        
+                        <a href="/promo" class="link-title link-title-lg">
+                            <span class="sp-link-title">Promo</span>
+                        </a>
+                    </li>
+                    <li class="menu-link">
+                       
+                        <a href="/about" class="link-title link-title-lg">
+                            <span class="sp-link-title">About</span>
+                        </a>
+                    </li>
+                    <li class="menu-link">
+                       
+                        <a href="/contact_us" class="link-title link-title-lg">
+                            <span class="sp-link-title">Contact Us</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- mega-menu end -->
+
+<!-- mobile-menu end -->
