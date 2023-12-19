@@ -25,6 +25,8 @@ class DatabaseSeeder extends Seeder
         // Event::Factory(5)->create();
         // Product::Factory(5)->create();
         $this->call([
+            RoleSeeder::class,
+            UserSeeder::class,
             EventSeeder::class,
             PromoSeeder::class,
             ProductSeeder::class,

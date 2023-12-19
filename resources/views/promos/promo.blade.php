@@ -20,9 +20,7 @@
                             <img src="{{ asset($event->banner) }}" class="img-fluid" alt="event-banner">
                         </a>
                     </div>
-                        
                     @endif
-                    
                 @endforeach
                 </div>
         </div>
