@@ -52,7 +52,7 @@ Route::get('/register', [AuthController::class, 'register'])->name('register');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::prefix('admin')->middleware(["auth:sanctum", "admin"])->group(function () {
+Route::prefix('admin')->middleware(["auth:sanctum", "admin"])->as("admin.")->group(function () {
     Route::get('/', function () {
         return view('admin.dashboard');
     })->name('dashboard');
