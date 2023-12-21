@@ -16,30 +16,24 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products_home = Product::latest()->take(3)->get();
-        return view('index', [
-            'title' => "Mich's Kitchen",
-            'products_home' => $products_home
-        ]);
+        $products = DB::table('products')
+        ->leftJoin('promos', 'products.promo_id', '=', 'promos.id')
+        ->leftJoin('events', 'promos.event_id', '=', 'events.id')
+        ->select('promos.*', 'events.*', 'products.*')
+        ->get();
+
+    return view('admin.products.index', [
+        'title' => 'Products',
+        'products' => $products
+    ]);
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function list()
-    {
-        $products = DB::table('products')
-            ->leftJoin('promos', 'products.promo_id', '=', 'promos.id')
-            ->leftJoin('events', 'promos.event_id', '=', 'events.id')
-            ->select('promos.*', 'events.*', 'products.*')
-            ->get();
-
-        return view('products/product', [
-            'title' => 'Products',
-            'products' => $products
-        ]);
+    public function create(){
+        return view('admin.products.create');
     }
-
     /**
      * Store a newly created resource in storage.
      */
@@ -59,9 +53,8 @@ class ProductController extends Controller
             ->where('products.id', '=', $showproduct->id)
             ->first();
 
-        return view('products/product_detail', [
-            'title' => 'Product Details',
-            'product' => $products
+        return view('admin/products/product', [
+            'products' => $products
         ]);
         // return json_encode($products);
     }

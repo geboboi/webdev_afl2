@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\PromoController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -53,7 +54,10 @@ Route::group([
     Route::get('/', function () {
         return view('admin.dashboard');
     })->name('dashboard');
+    Route::resource('product', AdminProductController::class);
+
 });
+
 
 
 Auth::routes();

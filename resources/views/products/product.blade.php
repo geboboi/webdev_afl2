@@ -3,6 +3,7 @@
 @extends('layouts.template')
 
 @section('main_content')
+
     <section class="main-content-wrap shop-page section-ptb">
         <div class="container">
             <div class="row">
@@ -76,7 +77,7 @@
                                                                                     {{ 'Rp ' . number_format($newprice, 0, ',', '.') }}</span>
                                                                                 <span
                                                                                     class="old-price">{{ 'Rp ' . number_format($product->price, 0, ',', '.') }}</span>
-                                                
+
                                                                             </div>
                                                                         @else
                                                                             <div class="price-box">
