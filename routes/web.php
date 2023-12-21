@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\PromoController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\WishlistController;
@@ -44,22 +45,6 @@ Route::get('/contact_us', function () {
     ]);
 })->middleware("auth:sanctum");
 
-// Route::get('/admin', function () {
-//     return view('admin.dashboard');
-// })->middleware('admin');
-
-// Route::group([
-//     'middleware' => 'admin',
-//     'prefix' => 'admin',
-//     'as' => 'admin.'
-// ], function () {
-//     Route::get('/', function () {
-//         return view('admin.dashboard');
-//     })->name('dashboard');
-// });
-
-
-// Auth::routes();
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login-action', [AuthController::class, 'loginAction'])->name('login.action');
@@ -67,8 +52,11 @@ Route::get('/register', [AuthController::class, 'register'])->name('register');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::prefix('admin')->middleware(["auth:sanctum", "admin"])->group(function () {
+Route::prefix('admin')->middleware(["auth:sanctum", "admin"])->as("admin.")->group(function () {
     Route::get('/', function () {
         return view('admin.dashboard');
     })->name('dashboard');
+    Route::resource('product', AdminProductController::class);
+
 });
+
