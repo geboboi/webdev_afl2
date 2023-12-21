@@ -63,7 +63,7 @@ class LoginController extends Controller
         if (Auth::attempt($member)) {
             return redirect()->route('landing');
         }
-        return redirect()->route('login');
+        return redirect()->route('login', ['title' => "Login"]);
     }
 
     private function isLogin(int $id)

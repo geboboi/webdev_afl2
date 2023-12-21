@@ -35,6 +35,8 @@
     <!-- other-page css -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/other-page.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/product-page.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/account.css')}}">
+
 
 </head>
 
