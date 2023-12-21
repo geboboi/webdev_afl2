@@ -69,9 +69,52 @@
                             <li class="side-wrap toggle-wrap">
                                 <button class="toggler-button"><span class="line"></span></button>
                             </li>
+                            <!-- button toggler end -->
+                            <!-- search-modal start -->
+                            <li class="side-wrap search-wrap">
+                                <a href="#seachmodal" class="search-popup" data-bs-toggle="modal">
+                                    <i class="feather-search"></i>
+                                </a>
+                                <a href="#seachmodal" class="search-popup search-popup-lg" data-bs-toggle="modal"><i class="feather-search"></i></a>
+                            </li>
+                            <!-- search-modal end -->
+                            <!-- login-account start -->
+                            <li class="side-wrap user-wrap">
+                                <div class="acc-desk-header">
+                                    <div class="acc-title">
+                                        <a href="{{route('login')}}">
+                                            <span class="user-icon"><i class="feather-user"></i></span>
+                                        </a>
+                                    </div>
+                                    <div class="acc-title-lg">
+                                        <a href="login-account.html"><i class="feather-user"></i></a>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- login-account end -->
+                            <!-- wishlist start -->
+                            <li class="side-wrap wishlist-wrap">
+                                <a href="{{route('wishlist')}}" class="header-wishlist-btn">
+                                    <span class="wishlist-icon"><i class="feather-heart"></i></span>
+                                    <span class="wishlist-counter">5</span>
+                                </a>
+                            </li>
+                            <!-- wishlist end -->
+                            <!-- cart start -->
+                            <li class="side-wrap cart-wrap">
+                                <div class="shopping-widget">
+                                    <div class="shopping-cart">
+                                        <a href="javascript:void(0)" class="cart-count">
+                                            <span class="cart-icon"><i class="feather-shopping-bag"></i></span>
+                                            <span class="cart-bigcounter">8</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- cart end -->
                         </ul>
                     </div>
-                    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+                    {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm mx-4">
                     <div class="container">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                         <span class="navbar-toggler-icon"></span>
@@ -115,7 +158,7 @@
                         </ul>
                     </div>
                     </div>
-                    </nav>
+                    </nav> --}}
                 </div>
             </div>
         </div>

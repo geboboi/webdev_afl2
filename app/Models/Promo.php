@@ -11,7 +11,7 @@ class Promo extends Model
     use HasFactory;
 
     protected $fillable = [
-        'percentage', 'product_id', 'event_id'
+        'percentage', 'event_id'
     ];
     public function product(){
         return $this->hasMany(Product::class);

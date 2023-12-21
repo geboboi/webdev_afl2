@@ -200,7 +200,7 @@
                         <li class="menu-title mt-2">Apps</li>
 
                         <li>
-                            <a href="#">
+                            <a href="{{route('admin.product.index')}}">
                                 <i class="fas fa-bread-slice"></i>
                                 <span> Product </span>
                             </a>

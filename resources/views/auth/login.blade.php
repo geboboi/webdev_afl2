@@ -1,73 +1,143 @@
-@extends('layouts.app')
+@extends('layouts.template')
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
+@section('main_content')
+<section class="breadcrumb-area">
+    <div class="container">
+        <div class="col">
+            <div class="row">
+                <div class="breadcrumb-index">
+                    <!-- breadcrumb main-title start-->
+                    <div class="breadcrumb-title">
+                        <h2>Account</h2>
+                    </div>
+                    <!-- breadcrumb main-title end-->
+                    <!-- breadcrumb-list start -->
+                    <ul class="breadcrumb-list">
+                        <li class="breadcrumb-item-list">
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li class="breadcrumb-item-list">
+                            <span>Account</span>
+                        </li>
+                    </ul>
+                    <!-- breadcrumb-list end -->
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
+<!-- breadcrumb start-->
+<section class="customer-page section-ptb">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="acc-form">
+                    <div class="log-acc-page" id="CustomerLoginForm">
+                        <!-- account title start -->
+                        <div class="content-main-title">
+                            <div class="section-cont-title">
+                                <h2><span>Login account</span></h2>
+                                <p>Please login account detail</p>
+                            </div>
+                        </div>
+                        <!-- account title end -->
+                        <!-- account login start -->
+                        <div class="acc-page">
+                            <div class="login">
+                                @if (Session::has('error'))
+                                    <div class="alert alert-danger">
+                                        {{ Session::get('error') }}
+                                    </div>
+                                @endif
+                                <form method="POST" action="{{ route('login.action') }}">
+                                    @csrf
+                                    <div class="login-form-container">
+                                        <ul class="fill-form">
+                                            <li class="log-email">
+                                                <label>Email address</label>
+                                                <input type="email" name="email" class="input-full" placeholder="Email address" autocomplete="off" value="{{ old('email') }}">
+                                                @error('email')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                            </li>
+                                            <li class="log-pwd">
+                                                <label>Password</label>
+                                                <input type="password" name="password" class="input-full" placeholder="Password">
+                                            </li>
+                                        </ul>
+                                        <div class="form-action-button">
+                                            <button type="submit" class="btn btn-style2">Sign In</button>
+                                            <a href="javascript:void(0)" onclick="myFunction()">Forgot your password?</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="acc-wrapper">
+                                <h6>Don't have account?</h6>
+                                <div class="account-optional-action">
+                                    <a href="{{route('register')}}">Create account</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- account login end -->
+                    </div>
+                    <div class="log-acc-page" id="RecoverPasswordForm" style="display: none;">
+                        <!-- account title start -->
+                        <div class="content-main-title">
+                            <div class="section-cont-title">
+                                <h2>
+                                <span class="title-main">Reset your password</span>
+                                </h2>
+                                <p>We will send you an email to reset your password.</p>
+                            </div>
+                        </div>
+                        <!-- account title end -->
+                        <!-- account login start -->
+                        <div class="acc-page">
+                            <div class="login">
+                                <form method="post">
+                                    <div class="login-form-container">
+                                        <ul class="fill-form">
+                                            <li class="log-email">
+                                                <label>Email address</label>
+                                                <input type="email" name="q" class="input-full" placeholder="Email address" autocomplete="off">
+                                            </li>
+                                            <li class="form-toggle-btn">
+                                                <div class="form-action-button">
+                                                    <button type="submit" class="btn btn-style2">Submit</button>
+                                                    <a onclick="myFunction()" href="javascript:void(0)">Cancel</a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- account login end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    function myFunction() {
+    var x = document.getElementById("RecoverPasswordForm");
+    var y= document.getElementById("CustomerLoginForm");
+    if (x.style.display === "none") {
+    x.style.display = "block";
+    }
+    else {
+    x.style.display = "none";
+    }
+    if (y.style.display === "none") {
+    y.style.display = "block";
+    }
+    else {
+    y.style.display = "none";
+    }
+    }
+    </script>
+</section>
 @endsection
