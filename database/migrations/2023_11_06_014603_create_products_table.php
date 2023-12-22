@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->integer('price');
             $table->text('description');
-            $table->string('image');
+            $table->string('image')->nullable(true);
             $table->unsignedBigInteger('promo_id')->nullable(true);
             $table->foreign('promo_id')
             ->references('id')

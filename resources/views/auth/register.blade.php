@@ -44,12 +44,18 @@
                         <!-- account login start -->
                         <div class="acc-page">
                             <div class="registers">
-                                <form method="post">
+                                @if (Session::has('error'))
+                                    <div class="alert alert-danger">
+                                        {{ Session::get('error') }}
+                                    </div>
+                                @endif
+                                <form method="POST" action="{{ route('register.action') }}">
+                                    @csrf
                                     <div class="login-form-container">
                                         <ul class="fill-form">
                                             <li class="fname">
                                                 <label>Name</label>
-                                                <input type="email" name="name" class="input-full" placeholder="First name" autocomplete="off">
+                                                <input type="name" name="name" class="input-full" placeholder="First name" autocomplete="off">
                                             </li>
                                             <li class="log-email">
                                                 <label>Email address</label>

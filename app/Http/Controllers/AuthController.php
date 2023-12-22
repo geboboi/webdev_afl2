@@ -2,17 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
 {
 
     public function register()
     {
-        return view('auth.register', [
-            'title' => "Register",
-        ]);
+        if (Auth::user()) {
+            return redirect()->route('landing');
+        } else {
+            return view('auth.register', [
+                'title' => "Register",
+            ]);
+        }
     }
 
     public function registerAction()
@@ -20,11 +28,11 @@ class AuthController extends Controller
         $validator = Validator::make(request()->all(), [
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|string|min:8|confirmed',
+            'password' => 'required|string|min:6',
         ]);
 
         if ($validator->fails()) {
-            return redirect()->route('register')->withErrors($validator)->withInput();
+            return redirect()->route('register')->withErrors($validator)->withInput()->with('error', 'Registrasi gagal. Mohon periksa informasi Anda dan coba lagi.');
         }
 
         // Create a new user
@@ -36,23 +44,33 @@ class AuthController extends Controller
             'is_active' => '1'
         ]);
 
-        // Generate token for the user
-        // You can customize the redirect route after registration
-        return redirect()->route('login')->with('success', 'Registration successful!');
+        if ($user) {
+            // Redirect the user to the login page with success message
+            return redirect()->route('login')->with('success', 'Registration successful! Please log in.');
+        } else {
+            // Handle the case where user creation fails
+            return redirect()->route('register')->with('error', 'Registration failed. Please try again later.');
+        }
     }
-
-    public function logout(){
+    public function logout()
+    {
         auth()->logout();
         return redirect()->route('login');
     }
 
-    public function login(){
-        return view('auth.login', [
-            'title' => "Login",
-        ]);
+    public function login()
+    {
+        if (Auth::user()) {
+            return redirect()->route('landing');
+        } else {
+            return view('auth.login', [
+                'title' => "Login",
+            ]);
+        }
     }
 
-    public function loginAction(){
+    public function loginAction()
+    {
         $validator = Validator::make(request()->all(), [
             'email' => 'required|email',
             'password' => 'required',
