@@ -51,6 +51,7 @@ Route::get('/contact_us', function () {
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login-action', [AuthController::class, 'loginAction'])->name('login.action');
+Route::post('/register-action', [AuthController::class, 'registerAction'])->name('register.action');
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -59,6 +60,5 @@ Route::prefix('admin')->middleware(["auth:sanctum", "admin"])->as("admin.")->gro
         return view('admin.dashboard');
     })->name('dashboard');
     Route::resource('product', AdminProductController::class);
-
 });
 
