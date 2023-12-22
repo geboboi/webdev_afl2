@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\PromoController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\WishlistController;
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -32,6 +33,8 @@ Route::get('/promo/{promo}', [EventController::class, 'show'])->name('promo.deta
 
 Route::get('/wishlist', [WishlistController::class, 'index'])->name('wishlist')->middleware("auth:sanctum");
 
+Route::get('/cart', [CartController::class, 'index'])->name('cart')->middleware("auth:sanctum");
+
 Route::get('/about', function () {
     return view('about', [
         'title' => 'About Us'
@@ -49,7 +52,6 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login-action', [AuthController::class, 'loginAction'])->name('login.action');
 Route::get('/register', [AuthController::class, 'register'])->name('register');
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::prefix('admin')->middleware(["auth:sanctum", "admin"])->as("admin.")->group(function () {

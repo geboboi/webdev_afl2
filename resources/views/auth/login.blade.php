@@ -14,7 +14,7 @@
                     <!-- breadcrumb-list start -->
                     <ul class="breadcrumb-list">
                         <li class="breadcrumb-item-list">
-                            <a href="index.html">Home</a>
+                            <a href={{route('landing')}}>Home</a>
                         </li>
                         <li class="breadcrumb-item-list">
                             <span>Account</span>

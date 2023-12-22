@@ -44,12 +44,12 @@
                         <!-- account login start -->
                         <div class="acc-page">
                             <div class="registers">
-                                <form method="post">
+                                <form method="POST">
                                     <div class="login-form-container">
                                         <ul class="fill-form">
                                             <li class="fname">
                                                 <label>Name</label>
-                                                <input type="email" name="name" class="input-full" placeholder="First name" autocomplete="off">
+                                                <input type="name" name="name" class="input-full" placeholder="First name" autocomplete="off">
                                             </li>
                                             <li class="log-email">
                                                 <label>Email address</label>
