@@ -27,7 +27,7 @@
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="example-fileinput" class="form-label">Product Image</label>
-                                    <input type="file" id="image" name="image" class="form-control" required>
+                                    <input type="file" id="image" name="image" class="form-control">
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="inputState" class="form-label">Promo Percentage</label>
