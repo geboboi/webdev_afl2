@@ -44,7 +44,13 @@
                         <!-- account login start -->
                         <div class="acc-page">
                             <div class="registers">
-                                <form method="POST">
+                                @if (Session::has('error'))
+                                    <div class="alert alert-danger">
+                                        {{ Session::get('error') }}
+                                    </div>
+                                @endif
+                                <form method="POST" action="{{ route('register.action') }}">
+                                    @csrf
                                     <div class="login-form-container">
                                         <ul class="fill-form">
                                             <li class="fname">

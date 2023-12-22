@@ -19,7 +19,6 @@ class UserSeeder extends Seeder
             'email_verified_at' => now(),
             'password' => bcrypt('696969'),
             'role_id' => 1,
-            'is_login' => '0',
             'is_active' => '1',
             'remember_token' => Str::random(10),
         ]);
@@ -27,12 +26,11 @@ class UserSeeder extends Seeder
             'name' => "Gabriela",
             'email' => 'gabriela@gmail.com',
             'email_verified_at' => now(),
-            'password' => bcrypt('12345'),
+            'password' => bcrypt('123456'),
             'role_id' => 2,
-            'is_login' => '0',
             'is_active' => '1',
             'remember_token' => Str::random(10),
         ]);
-        
+
     }
 }
