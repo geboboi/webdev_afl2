@@ -1,22 +1,12 @@
 @extends('layouts.template')
 @section('main_content')
-    <div class="container">
+    <div class="container my-4">
         <div class="row">
             <div class="col">
-                <div class="wishlist-page">
-                    <div class="wishlist-grid is_visible">
-                        <div class="wish-wrap">
-                            <!-- wishlist-title start -->
-                            <div class="wishlist-title">
-                                <h6>My wishlist:</h6>
-                                <span class="wish-count">
-                                    <span class="wishlist-counter">5</span>
-                                    <span class="wish-item-title">Item</span>
-                                </span>
-                            </div>
+
                             <!-- wishlist-title end -->
                             <!-- wishlist-product start -->
-                            @if (!$wishlist)
+                            @if ($wishlist->isEmpty())
                                 <section class="customer-page section-ptb">
                                     <div class="container">
                                         <div class="row">
@@ -33,7 +23,7 @@
                                                                     click
                                                                     on 'here' given below for continue browsing.</p>
                                                                 <p>Continue browsing
-                                                                    <a href="collection.html">here.</a>
+                                                                    <a href="{{route('product')}}">here.</a>
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -44,6 +34,17 @@
                                     </div>
                                 </section>
                             @else
+                            <div class="wishlist-page">
+                                <div class="wishlist-grid is_visible">
+                                    <div class="wish-wrap">
+                                        <!-- wishlist-title start -->
+                                        <div class="wishlist-title">
+                                            <h6>My wishlist:</h6>
+                                            <span class="wish-count">
+                                                <span class="wishlist-counter">5</span>
+                                                <span class="wish-item-title">Item</span>
+                                            </span>
+                                        </div>
                                 @foreach ($wishlist as $wishlists)
                                     <ul class="wishlist-tile-container">
                                         <li class="wishlist-info">
@@ -84,16 +85,14 @@
                                         </li>
                                     </ul>
                                 @endforeach
+                                <div class="wishlist-buttons">
+                                    <a href="{{route('product')}}" class="btn-style2">Continue shopping</a>
+                                    <a href="wishlist-empty.html" class="btn-style2">Clear wishlist</a>
+                                </div>
                             @endif
-
-
-
                             <!-- wishlist-product end -->
                             <!-- wishlist-buttons start -->
-                            <div class="wishlist-buttons">
-                                <a href="{{route('product')}}" class="btn-style2">Continue shopping</a>
-                                <a href="wishlist-empty.html" class="btn-style2">Clear wishlist</a>
-                            </div>
+
                             <!-- wishlist-buttons end -->
                         </div>
                     </div>
