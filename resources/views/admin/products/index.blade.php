@@ -25,7 +25,7 @@
                             <tbody>
                                 @foreach ($products as $product)
                                     <tr>
-                                        <td> <img src="{{ asset($product->image) }}" class="img-fluid img1" alt="Image not available"
+                                        <td> <img src="{{ asset('storage/'. $product->product_image) }}" class="img-fluid img1" alt="Image not available"
                                                 width="150px"></td>
                                         <td>{{ $product->name }}</td>
                                         <td>{{ $product->price }}</td>

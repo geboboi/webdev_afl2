@@ -9,6 +9,7 @@ use App\Http\Requests\UpdateProductRequest;
 use App\Models\Promo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -18,21 +19,22 @@ class ProductController extends Controller
     public function index()
     {
         $products = DB::table('products')
-        ->leftJoin('promos', 'products.promo_id', '=', 'promos.id')
-        ->leftJoin('events', 'promos.event_id', '=', 'events.id')
-        ->select('promos.*', 'events.*', 'products.*')
-        ->get();
+            ->leftJoin('promos', 'products.promo_id', '=', 'promos.id')
+            ->leftJoin('events', 'promos.event_id', '=', 'events.id')
+            ->select('promos.*', 'events.*', 'products.*')
+            ->get();
 
-    return view('admin.products.index', [
-        'title' => 'Products',
-        'products' => $products
-    ]);
+        return view('admin.products.index', [
+            'title' => 'Products',
+            'products' => $products
+        ]);
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create(){
+    public function create()
+    {
         $promos = Promo::all();
         return view('admin.products.create', compact('promos'));
     }
@@ -41,18 +43,28 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-
-        Product::create([
-            'name' => $request->name,
-            'price' => $request->price,
-            'description' => $request->desc,
-            'image' => $request->image,
-            'promo_id' => $request->promo
-            // Sesuaikan atribut dan nilai-nilai yang sesuai dengan model dan tabel di database
-        ]);
-
+        if ($request->hasFile('product_image')) {
+            $image = $request->file('product_image');
+            $imagePath = $image->store('images', ['disk' => 'public']);
+            Product::create([
+                'name' => $request->name,
+                'price' => $request->price,
+                'description' => $request->desc,
+                'product_image' => $imagePath,
+                'promo_id' => $request->promo
+            ]);
+        } else {
+            Product::create([
+                'name' => $request->name,
+                'price' => $request->price,
+                'description' => $request->desc,
+                'product_image' => NULL, // Set a default image path or NULL
+                'promo_id' => $request->promo
+            ]);
+        }
         return redirect()->route('admin.product.index')->with('success', 'Product added successfully');
     }
+
 
     /**
      * Display the specified resource.
@@ -101,13 +113,28 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        $product->update([
-            'name' => $request->name,
-            'price' => $request->price,
-            'description' => $request->desc,
-            'promo_id' => $request->promo
-        ]);
+        if ($request->hasFile('product_image')) {
+            if($product->product_image){
+                Storage::disk('public')->delete($product->product_image);
+            }
 
+            $image = $request->file('product_image');
+            $imagePath = $image->store('images', ['disk' => 'public']);
+            $product->update([
+                'name' => $request->name,
+                'price' => $request->price,
+                'description' => $request->description,
+                'product_image' => $imagePath,
+                'promo_id' => $request->promo
+            ]);
+        } else {
+            $product->update([
+                'name' => $request->name,
+                'price' => $request->price,
+                'description' => $request->description,
+                'promo_id' => $request->promo
+            ]);
+        }
         return redirect()->route('admin.product.index')->with('success', 'Product updated successfully');
     }
 
@@ -116,6 +143,11 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
+        if($product->product_image){
+            if(Storage::disk('public')->exists($product->product_image) ){
+                Storage::disk('public')->delete($product->product_image);
+            }
+        }
         $product->delete();
 
         return redirect()->route('admin.product.index')->with('success', 'Product deleted successfully');

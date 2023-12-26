@@ -10,7 +10,7 @@
     <meta content="Coderthemes" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/img/logo.svg') }}">
 
     <!-- App css -->
     <link href="{{ asset('assets/css/config/default/bootstrap.min.css') }}" rel="stylesheet" type="text/css"
@@ -23,10 +23,13 @@
     <link href="{{ asset('assets/css/config/default/app-dark.min.css') }}" rel="stylesheet" type="text/css"
         id="app-dark-stylesheet" disabled="disabled" />
 
-        <link href="{{asset('assets/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css')}}" rel="stylesheet" type="text/css" />
-        {{-- <link href="{{asset('assets/libs/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css')}}" rel="stylesheet" type="text/css" /> --}}
-        <link href="{{asset('assets/libs/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css')}}" rel="stylesheet" type="text/css" />
-        <link href="{{asset('assets/libs/datatables.net-select-bs5/css//select.bootstrap5.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css') }}" rel="stylesheet"
+        type="text/css" />
+    {{-- <link href="{{asset('assets/libs/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css')}}" rel="stylesheet" type="text/css" /> --}}
+    <link href="{{ asset('assets/libs/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css') }}" rel="stylesheet"
+        type="text/css" />
+    <link href="{{ asset('assets/libs/datatables.net-select-bs5/css//select.bootstrap5.min.css') }}" rel="stylesheet"
+        type="text/css" />
     <!-- icons -->
     <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
 
@@ -46,11 +49,9 @@
             <ul class="list-unstyled topnav-menu float-end mb-0">
 
                 <li class="dropdown notification-list topbar-dropdown">
-                    <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light"
-                        data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false"
-                        aria-expanded="false">
-                        <img src="{{ asset('assets/images/users/user-1.jpg') }}" alt="user-image"
-                            class="rounded-circle">
+                    <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown"
+                        href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        <img src="{{ asset('assets/img/logo.svg') }}" alt="logo-image" class="rounded-circle">
                         <span class="pro-user-name ms-1">
                             Nowak <i class="mdi mdi-chevron-down"></i>
                         </span>
@@ -68,18 +69,19 @@
                         </a>
 
                         <!-- item-->
-                        <a href="auth-lock-screen.html" class="dropdown-item notify-item">
-                            <i class="fe-lock"></i>
-                            <span>Lock Screen</span>
-                        </a>
 
                         <div class="dropdown-divider"></div>
 
                         <!-- item-->
-                        <a href="auth-logout.html" class="dropdown-item notify-item">
-                            <i class="fe-log-out"></i>
-                            <span>Logout</span>
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                                             document.getElementById('logout-form').submit();">
+                            <i class="fe-log-out me-1"></i>
+                            Logout
                         </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="get" class="d-none">
+                            @csrf
+                        </form>
 
                     </div>
                 </li>
@@ -88,20 +90,20 @@
 
             <!-- LOGO -->
             <div class="logo-box">
-                <a href="index.html" class="logo logo-light text-center">
+                <a href="/admin" class="logo logo-light text-center">
                     <span class="logo-sm">
-                        <img src="assets/images/logo-sm.png" alt="" height="22">
+                        <img src="{{ asset('assets/img/logo.svg') }}" alt="" height="30">
                     </span>
                     <span class="logo-lg">
-                        <img src="assets/images/logo-light.png" alt="" height="16">
+                        <img src="{{ asset('assets/img/logotext.svg') }}" alt="" height="40">
                     </span>
                 </a>
-                <a href="index.html" class="logo logo-dark text-center">
+                <a href="/admin" class="logo logo-dark text-center">
                     <span class="logo-sm">
-                        <img src="assets/images/logo-sm.png" alt="" height="22">
+                        <img src="{{ asset('assets/img/logo.svg') }}" alt="" height="30">
                     </span>
                     <span class="logo-lg">
-                        <img src="assets/images/logo-dark.png" alt="" height="16">
+                        <img src="{{ asset('assets/img/logotext.svg') }}" alt="" height="40">
                     </span>
                 </a>
             </div>
@@ -132,11 +134,11 @@
                 <!-- User box -->
                 <div class="user-box text-center">
 
-                    <img src="assets/images/users/user-1.jpg" alt="user-img" title="Mat Helme"
+                    <img src="{{ asset('assets/img/logo2.svg') }}" alt="user-img" title="Mat Helme"
                         class="rounded-circle img-thumbnail avatar-md">
                     <div class="dropdown">
                         <a href="#" class="user-name dropdown-toggle h5 mt-2 mb-1 d-block"
-                            data-bs-toggle="dropdown" aria-expanded="false">Nowak Helme</a>
+                            data-bs-toggle="dropdown" aria-expanded="false">Admin</a>
                         <div class="dropdown-menu user-pro-dropdown">
 
                             <!-- item-->
@@ -145,42 +147,22 @@
                                 <span>My Account</span>
                             </a>
 
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="fe-settings me-1"></i>
-                                <span>Settings</span>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="fe-lock me-1"></i>
-                                <span>Lock Screen</span>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                                                     document.getElementById('logout-form').submit();">
                                 <i class="fe-log-out me-1"></i>
-                                <span>Logout</span>
+                                Logout
                             </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="get" class="d-none">
+                                @csrf
+                            </form>
 
                         </div>
                     </div>
 
-                    <p class="text-muted left-user-info">Admin Head</p>
+                    <p class="text-muted left-user-info">Head Admin</p>
 
-                    <ul class="list-inline">
-                        <li class="list-inline-item">
-                            <a href="#" class="text-muted left-user-info">
-                                <i class="mdi mdi-cog"></i>
-                            </a>
-                        </li>
 
-                        <li class="list-inline-item">
-                            <a href="#">
-                                <i class="mdi mdi-power"></i>
-                            </a>
-                        </li>
-                    </ul>
                 </div>
 
                 <!--- Sidemenu -->
@@ -191,7 +173,7 @@
                         <li class="menu-title">Navigation</li>
 
                         <li>
-                            <a href="{{ route ('admin.dashboard') }}">
+                            <a href="{{ route('admin.dashboard') }}">
                                 <i class="mdi mdi-view-dashboard"></i>
                                 <span> Dashboard </span>
                             </a>
@@ -200,7 +182,7 @@
                         <li class="menu-title mt-2">Apps</li>
 
                         <li>
-                            <a href="{{route('admin.product.index')}}">
+                            <a href="{{ route('admin.product.index') }}">
                                 <i class="fas fa-bread-slice"></i>
                                 <span> Product </span>
                             </a>
@@ -273,411 +255,26 @@
                                 </ul>
                             </div>
                         </li>
-
-                        <li class="menu-title mt-2">Custom</li>
-
-                        <li>
-                            <a href="#sidebarAuth" data-bs-toggle="collapse">
-                                <i class="mdi mdi-file-multiple"></i>
-                                <span> Auth Pages </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="sidebarAuth">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a href="auth-login.html">Log In</a>
-                                    </li>
-                                    <li>
-                                        <a href="auth-register.html">Register</a>
-                                    </li>
-                                    <li>
-                                        <a href="auth-recoverpw.html">Recover Password</a>
-                                    </li>
-                                    <li>
-                                        <a href="auth-lock-screen.html">Lock Screen</a>
-                                    </li>
-                                    <li>
-                                        <a href="auth-confirm-mail.html">Confirm Mail</a>
-                                    </li>
-                                    <li>
-                                        <a href="auth-logout.html">Logout</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li>
-                            <a href="#sidebarExpages" data-bs-toggle="collapse">
-                                <i class="mdi mdi-layers"></i>
-                                <span> Extra Pages </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="sidebarExpages">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a href="pages-starter.html">Starter</a>
-                                    </li>
-                                    <li>
-                                        <a href="pages-pricing.html">Pricing</a>
-                                    </li>
-                                    <li>
-                                        <a href="pages-timeline.html">Timeline</a>
-                                    </li>
-                                    <li>
-                                        <a href="pages-invoice.html">Invoice</a>
-                                    </li>
-                                    <li>
-                                        <a href="pages-faqs.html">FAQs</a>
-                                    </li>
-                                    <li>
-                                        <a href="pages-gallery.html">Gallery</a>
-                                    </li>
-                                    <li>
-                                        <a href="pages-404.html">Error 404</a>
-                                    </li>
-                                    <li>
-                                        <a href="pages-500.html">Error 500</a>
-                                    </li>
-                                    <li>
-                                        <a href="pages-maintenance.html">Maintenance</a>
-                                    </li>
-                                    <li>
-                                        <a href="pages-coming-soon.html">Coming Soon</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li>
-                            <a href="#sidebarLayouts" data-bs-toggle="collapse">
-                                <i class="mdi mdi-page-layout-sidebar-left"></i>
-                                <span> Layouts </span>
-                                <span class="menu-arrow"></span>
-
-                            </a>
-                            <div class="collapse" id="sidebarLayouts">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a href="layouts-horizontal.html">Horizontal</a>
-                                    </li>
-                                    <li>
-                                        <a href="layouts-preloader.html">Preloader</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li class="menu-title mt-2">Components</li>
-
-                        <li>
-                            <a href="#sidebarBaseui" data-bs-toggle="collapse">
-                                <i class="mdi mdi-briefcase"></i>
-                                <span> Base UI </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="sidebarBaseui">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a href="ui-buttons.html">Buttons</a>
-                                    </li>
-                                    <li>
-                                        <a href="ui-cards.html">Cards</a>
-                                    </li>
-                                    <li>
-                                        <a href="ui-avatars.html">Avatars</a>
-                                    </li>
-                                    <li>
-                                        <a href="ui-tabs-accordions.html">Tabs & Accordions</a>
-                                    </li>
-                                    <li>
-                                        <a href="ui-modals.html">Modals</a>
-                                    </li>
-                                    <li>
-                                        <a href="ui-progress.html">Progress</a>
-                                    </li>
-                                    <li>
-                                        <a href="ui-notifications.html">Notifications</a>
-                                    </li>
-                                    <li>
-                                        <a href="ui-offcanvas.html">Offcanvas</a>
-                                    </li>
-                                    <li>
-                                        <a href="ui-placeholders.html">Placeholders</a>
-                                    </li>
-                                    <li>
-                                        <a href="ui-spinners.html">Spinners</a>
-                                    </li>
-                                    <li>
-                                        <a href="ui-images.html">Images</a>
-                                    </li>
-                                    <li>
-                                        <a href="ui-carousel.html">Carousel</a>
-                                    </li>
-                                    <li>
-                                        <a href="ui-video.html">Embed Video</a>
-                                    </li>
-                                    <li>
-                                        <a href="ui-dropdowns.html">Dropdowns</a>
-                                    </li>
-                                    <li>
-                                        <a href="ui-tooltips-popovers.html">Tooltips & Popovers</a>
-                                    </li>
-                                    <li>
-                                        <a href="ui-general.html">General UI</a>
-                                    </li>
-                                    <li>
-                                        <a href="ui-typography.html">Typography</a>
-                                    </li>
-                                    <li>
-                                        <a href="ui-grid.html">Grid</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li>
-                            <a href="widgets.html">
-                                <i class="mdi mdi-gift"></i>
-                                <span> Widgets </span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#sidebarExtendedui" data-bs-toggle="collapse">
-                                <i class="mdi mdi-layers"></i>
-                                <span class="badge bg-info float-end">Hot</span>
-                                <span> Extended UI </span>
-                            </a>
-                            <div class="collapse" id="sidebarExtendedui">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a href="extended-range-slider.html">Range Slider</a>
-                                    </li>
-                                    <li>
-                                        <a href="extended-sweet-alert.html">Sweet Alert</a>
-                                    </li>
-                                    <li>
-                                        <a href="extended-draggable-cards.html">Draggable Cards</a>
-                                    </li>
-                                    <li>
-                                        <a href="extended-tour.html">Tour Page</a>
-                                    </li>
-                                    <li>
-                                        <a href="extended-notification.html">Notification</a>
-                                    </li>
-                                    <li>
-                                        <a href="extended-treeview.html">Tree View</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li>
-                            <a href="#sidebarIcons" data-bs-toggle="collapse">
-                                <i class="mdi mdi-shield"></i>
-                                <span> Icons </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="sidebarIcons">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a href="icons-feather.html">Feather Icons</a>
-                                    </li>
-                                    <li>
-                                        <a href="icons-mdi.html">Material Design Icons</a>
-                                    </li>
-                                    <li>
-                                        <a href="icons-dripicons.html">Dripicons</a>
-                                    </li>
-                                    <li>
-                                        <a href="icons-font-awesome.html">Font Awesome 5</a>
-                                    </li>
-                                    <li>
-                                        <a href="icons-themify.html">Themify</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li>
-                            <a href="#sidebarForms" data-bs-toggle="collapse">
-                                <i class="mdi mdi-texture"></i>
-                                <span> Forms </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="sidebarForms">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a href="forms-elements.html">General Elements</a>
-                                    </li>
-                                    <li>
-                                        <a href="forms-advanced.html">Advanced</a>
-                                    </li>
-                                    <li>
-                                        <a href="forms-validation.html">Validation</a>
-                                    </li>
-                                    <li>
-                                        <a href="forms-wizard.html">Wizard</a>
-                                    </li>
-                                    <li>
-                                        <a href="forms-quilljs.html">Quilljs Editor</a>
-                                    </li>
-                                    <li>
-                                        <a href="forms-pickers.html">Picker</a>
-                                    </li>
-                                    <li>
-                                        <a href="forms-file-uploads.html">File Uploads</a>
-                                    </li>
-                                    <li>
-                                        <a href="forms-x-editable.html">X Editable</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li>
-                            <a href="#sidebarTables" data-bs-toggle="collapse">
-                                <i class="mdi mdi-view-list"></i>
-                                <span> Tables </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="sidebarTables">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a href="tables-basic.html">Basic Tables</a>
-                                    </li>
-                                    <li>
-                                        <a href="tables-datatables.html">Data Tables</a>
-                                    </li>
-                                    <li>
-                                        <a href="tables-editable.html">Editable Tables</a>
-                                    </li>
-                                    <li>
-                                        <a href="tables-responsive.html">Responsive Tables</a>
-                                    </li>
-                                    <li>
-                                        <a href="tables-tablesaw.html">Tablesaw Tables</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li>
-                            <a href="#sidebarCharts" data-bs-toggle="collapse">
-                                <i class="mdi mdi-chart-donut-variant"></i>
-                                <span> Charts </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="sidebarCharts">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a href="charts-flot.html">Flot Charts</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-morris.html">Morris Charts</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-chartjs.html">Chartjs Charts</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-chartist.html">Chartist Charts</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-sparklines.html">Sparkline Charts</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li>
-                            <a href="#sidebarMaps" data-bs-toggle="collapse">
-                                <i class="mdi mdi-map"></i>
-                                <span> Maps </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="sidebarMaps">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a href="maps-google.html">Google Maps</a>
-                                    </li>
-                                    <li>
-                                        <a href="maps-vector.html">Vector Maps</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li>
-                            <a href="#sidebarMultilevel" data-bs-toggle="collapse">
-                                <i class="mdi mdi-share-variant"></i>
-                                <span> Multi Level </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="sidebarMultilevel">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a href="#sidebarMultilevel2" data-bs-toggle="collapse">
-                                            Second Level <span class="menu-arrow"></span>
-                                        </a>
-                                        <div class="collapse" id="sidebarMultilevel2">
-                                            <ul class="nav-second-level">
-                                                <li>
-                                                    <a href="javascript: void(0);">Item 1</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript: void(0);">Item 2</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <a href="#sidebarMultilevel3" data-bs-toggle="collapse">
-                                            Third Level <span class="menu-arrow"></span>
-                                        </a>
-                                        <div class="collapse" id="sidebarMultilevel3">
-                                            <ul class="nav-second-level">
-                                                <li>
-                                                    <a href="javascript: void(0);">Item 1</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#sidebarMultilevel4" data-bs-toggle="collapse">
-                                                        Item 2 <span class="menu-arrow"></span>
-                                                    </a>
-                                                    <div class="collapse" id="sidebarMultilevel4">
-                                                        <ul class="nav-second-level">
-                                                            <li>
-                                                                <a href="javascript: void(0);">Item 1</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="javascript: void(0);">Item 2</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
                     </ul>
-
                 </div>
-                <!-- End Sidebar -->
-
-                <div class="clearfix"></div>
+                </li>
+                </ul>
 
             </div>
-            <!-- Sidebar -left -->
+            <!-- End Sidebar -->
+
+            <div class="clearfix"></div>
 
         </div>
-        <!-- Left Sidebar End -->
+        <!-- Sidebar -left -->
 
-        <!-- ============================================================== -->
-        <!-- Start Page Content here -->
-        <!-- ============================================================== -->
-        <div class="content-page">
+    </div>
+    <!-- Left Sidebar End -->
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+    <div class="content-page">
         @yield('page_content')
         <!-- ============================================================== -->
         <!-- End Page content -->
@@ -700,161 +297,10 @@
                 </div>
             </div>
         </footer>
-        </div>
-        <!-- END wrapper -->
-
-        <!-- Right Sidebar -->
-        <div class="right-bar">
-
-            <div data-simplebar class="h-100">
-
-                <div class="rightbar-title">
-                    <a href="javascript:void(0);" class="right-bar-toggle float-end">
-                        <i class="mdi mdi-close"></i>
-                    </a>
-                    <h4 class="font-16 m-0 text-white">Theme Customizer</h4>
-                </div>
-
-                <!-- Tab panes -->
-                <div class="tab-content pt-0">
-
-                    <div class="tab-pane active" id="settings-tab" role="tabpanel">
-
-                        <div class="p-3">
-                            <div class="alert alert-warning" role="alert">
-                                <strong>Customize </strong> the overall color scheme, Layout, etc.
-                            </div>
-
-                            <h6 class="fw-medium font-14 mt-4 mb-2 pb-1">Color Scheme</h6>
-                            <div class="form-check form-switch mb-1">
-                                <input type="checkbox" class="form-check-input" name="color-scheme-mode"
-                                    value="light" id="light-mode-check" checked />
-                                <label class="form-check-label" for="light-mode-check">Light Mode</label>
-                            </div>
-
-                            <div class="form-check form-switch mb-1">
-                                <input type="checkbox" class="form-check-input" name="color-scheme-mode"
-                                    value="dark" id="dark-mode-check" />
-                                <label class="form-check-label" for="dark-mode-check">Dark Mode</label>
-                            </div>
-
-                            <!-- Width -->
-                            <h6 class="fw-medium font-14 mt-4 mb-2 pb-1">Width</h6>
-                            <div class="form-check form-switch mb-1">
-                                <input type="checkbox" class="form-check-input" name="width" value="fluid"
-                                    id="fluid-check" checked />
-                                <label class="form-check-label" for="fluid-check">Fluid</label>
-                            </div>
-                            <div class="form-check form-switch mb-1">
-                                <input type="checkbox" class="form-check-input" name="width" value="boxed"
-                                    id="boxed-check" />
-                                <label class="form-check-label" for="boxed-check">Boxed</label>
-                            </div>
-
-                            <!-- Menu positions -->
-                            <h6 class="fw-medium font-14 mt-4 mb-2 pb-1">Menus (Leftsidebar and Topbar) Positon</h6>
-
-                            <div class="form-check form-switch mb-1">
-                                <input type="checkbox" class="form-check-input" name="menus-position" value="fixed"
-                                    id="fixed-check" checked />
-                                <label class="form-check-label" for="fixed-check">Fixed</label>
-                            </div>
-
-                            <div class="form-check form-switch mb-1">
-                                <input type="checkbox" class="form-check-input" name="menus-position"
-                                    value="scrollable" id="scrollable-check" />
-                                <label class="form-check-label" for="scrollable-check">Scrollable</label>
-                            </div>
-
-                            <!-- Left Sidebar-->
-                            <h6 class="fw-medium font-14 mt-4 mb-2 pb-1">Left Sidebar Color</h6>
-
-                            <div class="form-check form-switch mb-1">
-                                <input type="checkbox" class="form-check-input" name="leftsidebar-color"
-                                    value="light" id="light-check" />
-                                <label class="form-check-label" for="light-check">Light</label>
-                            </div>
-
-                            <div class="form-check form-switch mb-1">
-                                <input type="checkbox" class="form-check-input" name="leftsidebar-color"
-                                    value="dark" id="dark-check" checked />
-                                <label class="form-check-label" for="dark-check">Dark</label>
-                            </div>
-
-                            <div class="form-check form-switch mb-1">
-                                <input type="checkbox" class="form-check-input" name="leftsidebar-color"
-                                    value="brand" id="brand-check" />
-                                <label class="form-check-label" for="brand-check">Brand</label>
-                            </div>
-
-                            <div class="form-check form-switch mb-3">
-                                <input type="checkbox" class="form-check-input" name="leftsidebar-color"
-                                    value="gradient" id="gradient-check" />
-                                <label class="form-check-label" for="gradient-check">Gradient</label>
-                            </div>
-
-                            <!-- size -->
-                            <h6 class="fw-medium font-14 mt-4 mb-2 pb-1">Left Sidebar Size</h6>
-
-                            <div class="form-check form-switch mb-1">
-                                <input type="checkbox" class="form-check-input" name="leftsidebar-size"
-                                    value="default" id="default-size-check" checked />
-                                <label class="form-check-label" for="default-size-check">Default</label>
-                            </div>
-
-                            <div class="form-check form-switch mb-1">
-                                <input type="checkbox" class="form-check-input" name="leftsidebar-size"
-                                    value="condensed" id="condensed-check" />
-                                <label class="form-check-label" for="condensed-check">Condensed <small>(Extra Small
-                                        size)</small></label>
-                            </div>
-
-                            <div class="form-check form-switch mb-1">
-                                <input type="checkbox" class="form-check-input" name="leftsidebar-size"
-                                    value="compact" id="compact-check" />
-                                <label class="form-check-label" for="compact-check">Compact <small>(Small
-                                        size)</small></label>
-                            </div>
-
-                            <!-- User info -->
-                            <h6 class="fw-medium font-14 mt-4 mb-2 pb-1">Sidebar User Info</h6>
-
-                            <div class="form-check form-switch mb-1">
-                                <input type="checkbox" class="form-check-input" name="leftsidebar-user"
-                                    value="fixed" id="sidebaruser-check" />
-                                <label class="form-check-label" for="sidebaruser-check">Enable</label>
-                            </div>
-
-
-                            <!-- Topbar -->
-                            <h6 class="fw-medium font-14 mt-4 mb-2 pb-1">Topbar</h6>
-
-                            <div class="form-check form-switch mb-1">
-                                <input type="checkbox" class="form-check-input" name="topbar-color" value="dark"
-                                    id="darktopbar-check" checked />
-                                <label class="form-check-label" for="darktopbar-check">Dark</label>
-                            </div>
-
-                            <div class="form-check form-switch mb-1">
-                                <input type="checkbox" class="form-check-input" name="topbar-color" value="light"
-                                    id="lighttopbar-check" />
-                                <label class="form-check-label" for="lighttopbar-check">Light</label>
-                            </div>
-
-                            <div class="d-grid mt-4">
-                                <button class="btn btn-primary" id="resetBtn">Reset to Default</button>
-                                <a href="https://1.envato.market/admintoadmin" class="btn btn-danger mt-3"
-                                    target="_blank"><i class="mdi mdi-basket me-1"></i> Purchase Now</a>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-
-            </div> <!-- end slimscroll-menu-->
-        </div>
     </div>
+    <!-- END wrapper -->
+
+    <!-- Right Sidebar -->
     <!-- /Right-bar -->
 
     <!-- Right bar overlay-->
@@ -873,22 +319,22 @@
     <!-- Dashboar init js-->
     <script src="{{ asset('assets/js/pages/dashboard.init.js') }}"></script>
 
-    <script src="{{asset('assets/libs/jquery-tabledit/jquery.tabledit.min.js')}}"></script>
-    <script src="{{asset('assets/libs/datatables.net/js/jquery.dataTables.min.js')}}"></script>
-    <script src="{{asset('assets/libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js')}}"></script>
+    <script src="{{ asset('assets/libs/jquery-tabledit/jquery.tabledit.min.js') }}"></script>
+    <script src="{{ asset('assets/libs/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets/libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js') }}"></script>
     {{-- <script src="{{asset('assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script> --}}
     {{-- <script src="{{asset('assets/libs/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js')}}"></script> --}}
-    <script src="{{asset('assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js')}}"></script>
-    <script src="{{asset('assets/libs/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js')}}"></script>
-    <script src="{{asset('assets/libs/datatables.net-buttons/js/buttons.html5.min.js')}}"></script>
-    <script src="{{asset('assets/libs/datatables.net-buttons/js/buttons.flash.min.js')}}"></script>
-    <script src="{{asset('assets/libs/datatables.net-buttons/js/buttons.print.min.js')}}"></script>
-    <script src="{{asset('assets/libs/datatables.net-keytable/js/dataTables.keyTable.min.js')}}"></script>
-    <script src="{{asset('assets/libs/datatables.net-select/js/dataTables.select.min.js"')}}"></script>
-    <script src="{{asset('assets/libs/pdfmake/build/pdfmake.min.js')}}"></script>
-    <script src="{{asset('assets/libs/pdfmake/build/vfs_fonts.js"')}}"></script>
+    <script src="{{ asset('assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ asset('assets/libs/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js') }}"></script>
+    <script src="{{ asset('assets/libs/datatables.net-buttons/js/buttons.html5.min.js') }}"></script>
+    <script src="{{ asset('assets/libs/datatables.net-buttons/js/buttons.flash.min.js') }}"></script>
+    <script src="{{ asset('assets/libs/datatables.net-buttons/js/buttons.print.min.js') }}"></script>
+    <script src="{{ asset('assets/libs/datatables.net-keytable/js/dataTables.keyTable.min.js') }}"></script>
+    <script src="{{ asset('assets/libs/datatables.net-select/js/dataTables.select.min.js"') }}"></script>
+    <script src="{{ asset('assets/libs/pdfmake/build/pdfmake.min.js') }}"></script>
+    <script src="{{ asset('assets/libs/pdfmake/build/vfs_fonts.js"') }}"></script>
     <!-- Table editable init-->
-    <script src="{{asset('assets/js/pages/datatables.init.js')}}"></script>
+    <script src="{{ asset('assets/js/pages/datatables.init.js') }}"></script>
 
     <!-- App js-->
     <script src="{{ asset('assets/js/app.min.js') }}"></script>
