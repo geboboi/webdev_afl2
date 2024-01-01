@@ -3,6 +3,7 @@
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
+use App\Http\Controllers\Admin\EventController as AdminEventController;
 use App\Http\Controllers\PromoController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\WishlistController;
@@ -60,5 +61,6 @@ Route::prefix('admin')->middleware(["auth:sanctum", "admin"])->as("admin.")->gro
         return view('admin.dashboard');
     })->name('dashboard');
     Route::resource('product', AdminProductController::class);
+    Route::resource('event', AdminEventController::class);
 });
 

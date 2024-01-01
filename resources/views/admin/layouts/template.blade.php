@@ -196,21 +196,11 @@
                         </li>
 
                         <li>
-                            <a href="#email" data-bs-toggle="collapse">
+                            <a href="{{ route('admin.event.index') }}">
                                 <i class="mdi mdi-calendar"></i>
                                 <span> Event </span>
-                                <span class="menu-arrow"></span>
                             </a>
-                            <div class="collapse" id="email">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a href="email-inbox.html">Inbox</a>
-                                    </li>
-                                    <li>
-                                        <a href="email-templates.html">Email Templates</a>
-                                    </li>
-                                </ul>
-                            </div>
+
                         </li>
 
                         <li>
