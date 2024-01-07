@@ -204,21 +204,10 @@
                         </li>
 
                         <li>
-                            <a href="#sidebarTasks" data-bs-toggle="collapse">
+                            <a href="{{route('admin.shop.index')}}">
                                 <i class="mdi mdi-clipboard"></i>
-                                <span> Tasks </span>
-                                <span class="menu-arrow"></span>
+                                <span> Shop </span>
                             </a>
-                            <div class="collapse" id="sidebarTasks">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a href="task-kanban-board.html">Kanban Board</a>
-                                    </li>
-                                    <li>
-                                        <a href="task-details.html">Details</a>
-                                    </li>
-                                </ul>
-                            </div>
                         </li>
 
                         <li>

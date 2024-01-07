@@ -7,10 +7,12 @@
     "require": {
         "php": "^8.1",
         "guzzlehttp/guzzle": "^7.2",
+        "hardevine/shoppingcart": "^3.2",
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
         "laravel/ui": "^4.2",
+        "livewire/livewire": "^3.3",
         "nesbot/carbon": "^2.71"
     },
     "require-dev": {
@@ -32,7 +34,10 @@
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"
-        }
+        },
+        "files":[
+            "app/Http/Helpers.php"
+        ]
     },
     "scripts": {
         "post-autoload-dump": [
@@ -54,6 +59,8 @@
             "dont-discover": []
         }
     },
+
+
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
@@ -65,4 +72,6 @@
     },
     "minimum-stability": "stable",
     "prefer-stable": true
+
+
 }

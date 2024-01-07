@@ -23,7 +23,7 @@
                                             <div class="single-product-wrap">
                                                 <div class="product-image">
                                                     <a href="{{route('product.show', $product->id)}}" class="pro-img">
-                                                        <img src="{{ asset($product->image) }}" class="img-fluid"
+                                                        <img src="{{ asset('storage/'. $product->product_image) }}" class="img-fluid"
                                                             alt="deal-01">
                                                     </a>
                                                 </div>
