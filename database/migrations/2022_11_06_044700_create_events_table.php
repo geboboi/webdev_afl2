@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('description');
             $table->dateTime('start_date');
             $table->dateTime('end_date');
-            $table->string('banner');
+            $table->string('banner')->nullable(false);
             $table->timestamps();
         });
     }

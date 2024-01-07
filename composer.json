@@ -11,6 +11,9 @@
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
         "laravel/ui": "^4.2",
+        "laravolt/indonesia": "^0.34.0",
+        "livewire/livewire": "^3.3",
+        "midtrans/midtrans-php": "^2.5",
         "nesbot/carbon": "^2.71"
     },
     "require-dev": {

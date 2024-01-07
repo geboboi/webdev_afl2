@@ -189,7 +189,7 @@
                         </li>
 
                         <li>
-                            <a href="apps-chat.html">
+                            <a href="{{ route('admin.promo.index') }}">
                                 <i class="fas fa-percentage"></i>
                                 <span> Promo </span>
                             </a>

@@ -16,4 +16,9 @@ class Promo extends Model
     public function product(){
         return $this->hasMany(Product::class);
     }
+
+    public function event()
+    {
+        return $this->belongsTo(Event::class);
+    }
 }

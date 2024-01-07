@@ -47,9 +47,9 @@
                                             <!-- product-img start -->
                                             <div class="product-image">
                                                 <a href="product/{{ $product_home['id']}}" class="pro-img">
-                                                    <img src="{{ asset($product_home->image) }}" class="img-fluid img1"
+                                                    <img src="{{ asset('storage/'. $product_home->product_image) }}" class="img-fluid img1"
                                                         alt="p-73">
-                                                    <img src="{{ asset($product_home->image) }}" class="img-fluid img2"
+                                                    <img src="{{ asset('storage/'. $product_home->product_image) }}" class="img-fluid img2"
                                                         alt="p-74">
                                                 </a>
                                             </div>
@@ -72,9 +72,9 @@
                                             <!-- product-img start -->
                                             <div class="product-image">
                                                 <a href="product/{{ $product_home['id']}}" class="pro-img">
-                                                    <img src="{{ asset($product_home->image) }}" class="img-fluid img1"
+                                                    <img src="{{ asset('storage/'. $product_home->product_image) }}" class="img-fluid img1"
                                                         alt="p-73">
-                                                    <img src="{{ asset($product_home->image) }}" class="img-fluid img2"
+                                                    <img src="{{ asset('storage/'. $product_home->product_image) }}" class="img-fluid img2"
                                                         alt="p-74">
                                                 </a>
                                             </div>

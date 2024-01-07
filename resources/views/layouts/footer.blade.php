@@ -77,7 +77,7 @@
                             <p>
                                 <span>Copyright</span>
                                 <span class="copy-icon"><i class="far fa-copyright"></i></span>
-                                <span>2023 by MotherGabzTech<sup>TM</sup></span>
+                                <span>2024 by MotherGabzTech<sup>TM</sup></span>
                             </p>
                         </li>
                         {{-- <li class="grid-wrapper grid-payment">
@@ -111,25 +111,25 @@
                         </a>
                     </li>
                     <li class="menu-link">
-           
+
                         <a href="/product" class="link-title link-title-lg">
                             <span class="sp-link-title">Product</span>
                         </a>
                     </li>
                     <li class="menu-link">
-                        
+
                         <a href="/promo" class="link-title link-title-lg">
                             <span class="sp-link-title">Promo</span>
                         </a>
                     </li>
                     <li class="menu-link">
-                       
+
                         <a href="/about" class="link-title link-title-lg">
                             <span class="sp-link-title">About</span>
                         </a>
                     </li>
                     <li class="menu-link">
-                       
+
                         <a href="/contact_us" class="link-title link-title-lg">
                             <span class="sp-link-title">Contact Us</span>
                         </a>

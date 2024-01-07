@@ -36,7 +36,7 @@
                                     <select id="promo" name="promo" class="form-select">
                                         <option></option>
                                         @foreach ($promos as $promo)
-                                            <option value ="{{ $promo->id }}">{{ $promo->percentage }}</option>
+                                            <option value ="{{ $promo->id }}">{{ $promo->percentage . "% - " . $promo->event->event_name }}</option>
                                         @endforeach
                                     </select>
                                 </div>

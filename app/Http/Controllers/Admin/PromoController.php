@@ -2,44 +2,55 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\Event;
 use App\Models\Promo;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePromoRequest;
 use App\Http\Requests\UpdatePromoRequest;
-use App\Models\Event;
 
 class PromoController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index($showpromo)
+    public function index()
     {
-
-     }
-
-    public function discount($id)
-    {
-        $promo = Promo::with('product')->find($id);
-        return view('promos/promo_detail', [
+        $promos = Promo::with('event')->get();
+        return view('admin.promos.index', [
             'title' => ' Sale',
-            'promos' => $promo
+            'promos' => $promos
         ]);
     }
+
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        $events = Event::all();
+        return view('admin.promos.create', compact('events'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorePromoRequest $request)
+    public function store(Request $request)
     {
-        //
+        if ($request->event) {
+            Promo::create([
+                'percentage' => $request->percentage,
+                'event_id' => $request->event
+            ]);
+        } else {
+            Promo::create([
+                'percentage' => $request->percentage,
+                'event_id' => null
+            ]);
+        }
+
+        return redirect()->route('admin.promo.index')->with('success', 'Promo added successfully');
     }
 
     /**
@@ -55,7 +66,17 @@ class PromoController extends Controller
      */
     public function edit(Promo $promo)
     {
-        //
+        $promos = DB::table('promos')
+        ->select('promos.*')
+        ->where('promos.id', '=', $promo->id)
+        ->first();
+        $promo = Promo::find($promo);
+        $events = Event::all();
+        return view('admin.promos.index', [
+            'title' => ' Sale',
+            'promo' => $promo,
+            'events' => $events
+        ]);
     }
 
     /**
@@ -63,7 +84,17 @@ class PromoController extends Controller
      */
     public function update(UpdatePromoRequest $request, Promo $promo)
     {
-        //
+        if ($request->event) {
+            Promo::updated([
+                'percentage' => $request->percentage,
+                'event_id' => $request->event
+            ]);
+        } else {
+            Promo::updated([
+                'percentage' => $request->percentage,
+                'event_id' => null
+            ]);
+        }
     }
 
     /**

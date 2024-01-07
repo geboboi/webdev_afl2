@@ -38,13 +38,13 @@ $(window).on('load',function(){
         if (scroll > lastScrollTop) {
             $('.header-area').addClass('sticky-down');
             $('.header-area').removeClass('sticky-up');
-        } 
+        }
         else {
             if (lastScrollTop <= 100) {
                 $('.header-area').removeClass('sticky');
                 $('.header-area').removeClass('sticky-down');
                 $('.header-area').removeClass('sticky-up');
-            } 
+            }
             else {
                 $('.header-area').addClass('sticky');
                 $('.header-area').removeClass('sticky-down');
@@ -107,7 +107,7 @@ $(window).on('load',function(){
         $('body').removeClass("hidden");
         $('.screen-bg').removeClass("active");
     });
-    $('.add-to-cart').on('click', function () { 
+    $('.add-to-cart').on('click', function () {
         $('.mini-cart').addClass("active");
         $('.screen-bg').addClass("active");
     });
@@ -126,14 +126,14 @@ $(window).on('load',function(){
     /*==============================
         read-agree js
     ==============================*/
-    $('label.box-area, .read-agree').on('click', function () {
-        if($('.cust-checkbox, .create-checkbox').is(':checked')) {
-            $('.checkout, .create').removeClass('disabled');
-        }
-        else {
-            $('.checkout, .create').addClass('disabled');
-        }
-    });
+    // $('label.box-area, .read-agree').on('change', function () {
+    //     if($('.cust-checkbox, .create-checkbox').is(':checked')) {
+    //         $('.checkout, .create').removeClass('disabled');
+    //     }
+    //     else {
+    //         $('.checkout, .create').addClass('disabled');
+    //     }
+    // });
 
     /*==============================
         home-slider js
@@ -177,7 +177,7 @@ $(window).on('load',function(){
             }
         }
     });
-    
+
     /*==============================
         product js
     ==============================*/
@@ -548,7 +548,7 @@ $(window).on('load',function(){
         }
     });
 
-    /*============================== 
+    /*==============================
         quickview js
     ==============================*/
     var galleryThumbs = new Swiper(".gallery-thumbs", {
@@ -569,9 +569,9 @@ $(window).on('load',function(){
         thumbs: {
             swiper: galleryThumbs,
         },
-    }); 
+    });
 
-    /*========================================== 
+    /*==========================================
         minus and plus btn js
     ==========================================*/
     $('.dec').on("click",function () {
@@ -596,7 +596,7 @@ $(window).on('load',function(){
     $(window).on("scroll",function() {
         if ($(this).scrollTop() > 600) {
             $('#top').addClass('show');
-        } 
+        }
         else {
             $('#top').removeClass('show');
         }
@@ -605,5 +605,5 @@ $(window).on('load',function(){
     $('#top').on("click",function() {
         $("html, body").animate({ scrollTop: 0 }, 0);
         return false;
-    }); 
+    });
 })(jQuery);

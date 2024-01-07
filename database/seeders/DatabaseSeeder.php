@@ -6,7 +6,10 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\Event;
 use App\Models\Product;
-
+use Laravolt\Indonesia\Seeds\CitiesSeeder;
+use Laravolt\Indonesia\Seeds\VillagesSeeder;
+use Laravolt\Indonesia\Seeds\DistrictsSeeder;
+use Laravolt\Indonesia\Seeds\ProvincesSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -30,7 +33,11 @@ class DatabaseSeeder extends Seeder
             EventSeeder::class,
             PromoSeeder::class,
             ProductSeeder::class,
-            ShopSeeder::class
+            ShopSeeder::class,
+            ProvincesSeeder::class,
+            CitiesSeeder::class,
+            DistrictsSeeder::class,
+            VillagesSeeder::class
         ]);
     }
 }

@@ -6,8 +6,13 @@
     <meta name="keywords" content="food template, bakery products, html, eCommerce html template, responsive, pizza, burger, furniture, mobile, watches, electronics, computers accessories, toys, jewellery, restaurant accessories"/>
     <meta name="author" content="spacingtech_webify">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript"
+		src="https://app.sandbox.midtrans.com/snap/snap.js"
+    data-client-key="{{config('midtrans.client_key')}}"></script>
     <!-- title -->
     <title>{{$title}}</title>
+    @livewireStyles
+
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/logo/favicon.ico') }}">
     <!-- bootstrap css -->
@@ -30,6 +35,7 @@
     <!-- slick slider css -->
     <link rel="stylesheet" type of="text/css" href="{{ asset('assets/css/slick.css') }}">
     <!-- style css -->
+    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}"> --}}
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style4.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/collection-page.css') }}">
     <!-- other-page css -->
@@ -57,6 +63,8 @@
 <a href="javascript:void(0)" id="top" class="scroll">
     <span><i class="feather-arrow-up"></i></span>
 </a>
+@livewireScripts
+
 <!-- back-to-top end -->
 <!-- jquery -->
 <script src="{{ asset('assets/js/jquery-3.6.3.min.js') }}"></script>

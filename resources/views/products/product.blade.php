@@ -46,9 +46,9 @@
                                                                     <div class="product-image">
                                                                         <a href="product/{{ $product->id }}"
                                                                             class="pro-img">
-                                                                            <img src="{{ asset($product->image) }}"
+                                                                            <img src="{{ asset('storage/'. $product->product_image) }}"
                                                                                 class="img-fluid img1" alt="p-1">
-                                                                            <img src="{{ asset($product->image) }}"
+                                                                            <img src="{{ asset('storage/'. $product->product_image) }}"
                                                                                 class="img-fluid img2" alt="p-2">
                                                                         </a>
                                                                         <!-- product-label start -->

@@ -39,10 +39,10 @@
                                         <!-- blog slick slider start -->
                                         <div class="slider-big-7 slick-slider">
                                             <div class="slick-slide ">
-                                                <a href="{{ asset($product->image) }}" class="product-single">
+                                                <a href="{{ asset('storage/'. $product->product_image) }}" class="product-single">
                                                     <figure class="zoom" onmousemove="zoom(event)"
-                                                        style="background-image: url('{{ asset($product->image) }}');">
-                                                        <img src="{{ asset($product->image) }}" class="img-fluid"
+                                                        style="background-image: url('{{ asset('storage/'. $product->product_image) }}');">
+                                                        <img src="{{ asset('storage/'. $product->product_image) }}" class="img-fluid"
                                                             alt="p-1">
                                                     </figure>
                                                 </a>
@@ -55,7 +55,7 @@
                                         <div class="slider-small-7 pro-detail-slider small_slider">
                                             <div class="slick-slide ">
                                                 <a href="javascript:void(0)" class="product-single__thumbnail">
-                                                    <img src="{{ asset($product->image) }}" class="img-fluid"
+                                                    <img src="{{ asset('storage/'. $product->product_image) }}" class="img-fluid"
                                                         alt="p-1">
                                                 </a>
                                             </div>

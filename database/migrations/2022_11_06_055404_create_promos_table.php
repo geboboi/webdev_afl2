@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('promos', function (Blueprint $table) {
             $table->id();
             $table->integer('percentage');
-            $table->unsignedBigInteger('event_id');
+            $table->unsignedBigInteger('event_id')->nullable();
             $table->foreign('event_id')
             ->references('id')
             ->on('events')
