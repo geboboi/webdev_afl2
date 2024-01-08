@@ -153,11 +153,11 @@ html.hidden {
 /*====================================
     heading css
 =====================================*/
-h1, 
-h2, 
-h3, 
-h4, 
-h5, 
+h1,
+h2,
+h3,
+h4,
+h5,
 h6 {
   color: var(--font-color-header);
   margin: 0;
@@ -261,7 +261,7 @@ span {
 
 /*====================================
     'button' tag css
-=====================================*/    
+=====================================*/
 button {
     padding: 0px;
     display: inline-block;
@@ -726,7 +726,7 @@ iframe {
 }
 @media (max-width: 479px) {
     .top-notification-bar ul.grid-wrap li.grid-wrapper {
-        width: max-content;   
+        width: max-content;
     }
 }
 
@@ -912,7 +912,7 @@ iframe {
 .product-tab-ptb .tab ul.nav-tabs li a.active {
    background-color: var(--font-color-primary);
 }
-.product-tab-ptb .tab ul.nav-tabs li:hover a, 
+.product-tab-ptb .tab ul.nav-tabs li:hover a,
 .product-tab-ptb .tab ul.nav-tabs li a.active {
     color: var(--font-color-header);
 }
@@ -990,14 +990,14 @@ button.toggler-button {
 }
 .header-area.sticky-down {
     transform: translateY(-100%);
-    -ms-transform: translateY(-100%);   
+    -ms-transform: translateY(-100%);
     -webkit-transform: translateY(-100%);
     -moz-transform: translateY(-100%);
     -o-transform: translateY(-100%);
 }
 .header-area.sticky-up {
     transform: translateY(0);
-    -ms-transform: translateY(0);   
+    -ms-transform: translateY(0);
     -webkit-transform: translateY(0);
     -moz-transform: translateY(0);
     -o-transform: translateY(0);
@@ -1019,7 +1019,7 @@ button.toggler-button {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}   
+}
 .header-area .header-element.megamenu-content {
     display: flex;
     margin: 0px auto 0px 100px
@@ -1027,7 +1027,7 @@ button.toggler-button {
 .header-area .header-main .navbar-toggler {
     display: none;
 }
-    
+
 @media (max-width: 1599px) {
     .header-area .header-element.megamenu-content {
         margin: 0px auto 0px 30px;
@@ -1059,7 +1059,7 @@ a.theme-header-logo img {
         max-width: 110px;
     }
 }
-    
+
 
 /* search css */
 .search-rap {
@@ -1480,7 +1480,7 @@ a.search-popup.search-popup-lg {
     .megamenu-content .mainwrap.collapse:not(.show) {
         display: none;
     }
-}    
+}
 
 /* main-menu css */
 .megamenu-content .mainwrap ul.main-menu {
@@ -1535,7 +1535,7 @@ a.search-popup.search-popup-lg {
 }
 .megamenu-content .mainwrap ul.main-menu li.menu-link a.link-title span.menu-arrow i {
     font-weight: 600;
-}   
+}
 .megamenu-content .mainwrap ul.main-menu li.menu-link .menu-dropdown {
     position: absolute;
     top: 100%;
@@ -2709,7 +2709,7 @@ a.search-popup.search-popup-lg {
 .custom-text-wrapper .custom-text-content p {
     margin-top: 22px;
 }
-    
+
 
 /* custom img css */
 .custom-text-wrapper .custom-text-img {
@@ -3078,8 +3078,8 @@ ul.single-service li.service-content .ser-block .service-text p {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 30px;    
-} 
+    margin-top: 30px;
+}
 .testimonial-area .slider-nav ul.slick-dots li {
     margin-right: 5px;
 }
@@ -3135,7 +3135,7 @@ ul.single-service li.service-content .ser-block .service-text p {
         height: 15px;
     }
 }
- 
+
 /* slider dot css */
 .collection-category-template .collection-wrap .swiper-buttons{
     display: none;
@@ -3525,7 +3525,7 @@ ul.single-service li.service-content .ser-block .service-text p {
     align-items: center;
     text-align: center;
     padding: 30px 15px;
-}    
+}
 .single-product-wrap .product-content h6 {
     width: 100%;
     font-size: 18px;
@@ -3541,10 +3541,10 @@ ul.single-service li.service-content .ser-block .service-text p {
     -webkit-transition: all 0s ease-in-out 0s;
     -o-transition: all 0s ease-in-out 0s;
     transition: all 0s ease-in-out 0s;
-}    
+}
 .single-product-wrap .product-content h6 a:hover {
     color: var(--font-color-primary);
-}   
+}
 .single-product-wrap .product-content .price-box {
     margin-top: 13px;
     justify-content: center;
@@ -4472,7 +4472,7 @@ ul.social-icon li a span.linkedin {
 ul.social-icon li a span.telegram {
     color: #0088cc;
     background-color: transparent;
-} 
+}
 
 /*====================================
    payment-icon css
@@ -4489,7 +4489,7 @@ ul.social-icon li a span.telegram {
 
 /*====================================
     banner-hover css
-====================================*/    
+====================================*/
 .banner-hover {
     display: block;
     position: relative;
@@ -4632,7 +4632,7 @@ ul.social-icon li a span.telegram {
         -o-transition: all 0s ease-in-out 0s;
         transition: all 0s ease-in-out 0s;
     }
-}    
+}
 
 /*====================================
    animation css
@@ -5105,11 +5105,11 @@ ul.social-icon li a span.telegram {
     display: flex;
     flex-wrap: wrap;
     -ms-flex-wrap: wrap;
-} 
+}
 .productmodal .modal-body .quickview-main-area .quickview-slider {
     width: 50%;
     padding-left: 15px;
-} 
+}
 .productmodal .modal-body .quickview-main-area .gallery-top {
     margin-bottom: 15px;
 }
@@ -5131,7 +5131,7 @@ ul.social-icon li a span.telegram {
     padding: 0px 15px;
     max-height: 523px;
     overflow-y: auto;
-} 
+}
 .productmodal .modal-dialog .modal-body .quick-view-content .price-box span.new-price,
 .productmodal .modal-dialog .modal-body .quick-view-content .price-box span.old-price {
     font-size: 16px;
@@ -5279,7 +5279,7 @@ ul.social-icon li a span.telegram {
     color: var(--font-color-header);
 }
 .pro-aff-che a.wishlist, .quickview-buttons a.wishlist i {
-    display: block;    
+    display: block;
     line-height: 0;
 }
 .pro-aff-che a.wishlist, .quickview-buttons a.wishlist .wishlist-title {
@@ -5455,7 +5455,7 @@ a.scroll:hover span {
 .shop-sidebar ul.scrollbar::-webkit-scrollbar,
 .shop-sidebar-wrap::-webkit-scrollbar {
     width: 4px;
-}   
+}
 .currency-wrap .local-currency ul::-webkit-scrollbar-track,
 .mini-cart ul.cart-item::-webkit-scrollbar-track,
 .productmodal .quick-view-content::-webkit-scrollbar-track,
@@ -5480,7 +5480,7 @@ a.scroll:hover span {
 
 /*====================================
     swiper-buttons css
-=====================================*/   
+=====================================*/
 .related-blog .swiper-buttons,
 .blog-wrap .swiper-buttons {
     display: flex;

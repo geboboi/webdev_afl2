@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('carts', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('quantity')->nullable();
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')
             ->references('id')
@@ -26,6 +25,9 @@ return new class extends Migration
             ->on('users')
             ->onUpdate('cascade')
             ->onDelete('cascade');
+            $table->double('price');
+            $table->integer('quantity')->nullable();
+            $table->double('amount')->nullable();
             $table->timestamps();
         });
     }

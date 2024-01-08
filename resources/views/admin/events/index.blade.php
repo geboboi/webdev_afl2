@@ -6,6 +6,11 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="mt-0 header-title mb-3">Events</h4>
+                    @if (session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
                     <div class="col-sm-4">
                         <a href="{{ route ('admin.event.create')}}">
                             <button type="button" class="btn btn-primary waves-effect waves-light mb-3"><i class="fas fa-plus px-1"></i>

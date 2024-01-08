@@ -19,12 +19,21 @@ return new class extends Migration
             ->on('products')
             ->onUpdate('cascade')
             ->onDelete('cascade');
+            $table->unsignedBigInteger('cart_id')->nullable();
+            $table->foreign('cart_id')
+            ->references('id')
+            ->on('carts')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')
             ->references('id')
             ->on('users')
             ->onUpdate('cascade')
             ->onDelete('cascade');
+            $table->double('price');
+            $table->timestamps();
+
         });
     }
 

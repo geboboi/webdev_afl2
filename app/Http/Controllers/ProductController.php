@@ -15,10 +15,12 @@ class ProductController extends Controller
      */
     public function index()
     {
+
         $products_home = Product::latest()->take(3)->get();
         return view('index', [
             'title' => "Mich's Kitchen",
             'products_home' => $products_home
+
         ]);
     }
 
@@ -65,12 +67,28 @@ class ProductController extends Controller
         // return json_encode($products);
     }
 
+    public function showWishlist(Product $showproduct)
+    {
+        $products = DB::table('products')
+            ->leftJoin('promos', 'products.promo_id', '=', 'promos.id')
+            ->leftJoin('events', 'promos.event_id', '=', 'events.id')
+            ->select('promos.*', 'events.*', 'products.*')
+            ->where('products.id', '=', $showproduct->id)
+            ->first();
+
+        return view('wishlist', [
+            'title' => 'Wishlist',
+            'product' => $products
+        ]);
+        // return json_encode($products);
+    }
+
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(Product $product)
     {
-    
+
     }
 
     /**

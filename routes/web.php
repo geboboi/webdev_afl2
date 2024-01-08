@@ -13,6 +13,9 @@ use App\Http\Controllers\WishlistController;
 use App\Http\Controllers\Admin\EventController as AdminEventController;
 use App\Http\Controllers\Admin\PromoController as AdminPromoController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
+use App\Http\Controllers\Admin\ShopController as AdminShopController;
+use App\Http\Controllers\PromoController;
+use App\Http\Controllers\ShopController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,9 +38,17 @@ Route::get('/promo', [EventController::class, 'index']);
 
 Route::get('/promo/{promo}', [EventController::class, 'show'])->name('promo.detail')->middleware("auth:sanctum");
 
-Route::get('/wishlist', [WishlistController::class, 'index'])->name('wishlist')->middleware("auth:sanctum");
 
-Route::get('/cart', [CartController::class, 'index'])->name('cart')->middleware("auth:sanctum");
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index')->middleware("auth:sanctum");
+Route::get('/cart/add/{id}', [CartController::class, 'store'])->name('cart.store')->middleware("auth:sanctum");
+Route::get('/cart/down/{id}', [CartController::class, 'decrease'])->name('cart.decrease')->middleware("auth:sanctum");
+Route::get('/cart/delete/{id}', [CartController::class, 'destroyItem'])->name('cart.delete')->middleware("auth:sanctum");
+Route::get('/cart/clear', [CartController::class, 'clearItem'])->name('cart.clear')->middleware("auth:sanctum");
+
+Route::get('/wishlist', [WishlistController::class, 'index'])->name('wishlist.index')->middleware("auth:sanctum");
+Route::get('/wishlist/add/{id}', [WishlistController::class, 'addToWishlist'])->name('wishlist.store')->middleware("auth:sanctum");
+Route::get('/wishlist/delete/{id}', [WishlistController::class, 'deleteWishlist'])->name('wishlist.delete')->middleware("auth:sanctum");
+Route::get('/wishlist/clear', [WishlistController::class, 'clearItem'])->name('wishlist.clear')->middleware("auth:sanctum");
 
 Route::get('/account/orders', [UserController::class, 'order'])->name('profile.orders')->middleware("auth:sanctum");
 Route::get('/account/profile', [UserController::class, 'profile'])->name('profile')->middleware("auth:sanctum");
@@ -49,11 +60,8 @@ Route::get('/about', function () {
 });
 
 
-Route::get('/contact_us', function () {
-    return view('contact_us', [
-        'title' => 'Contact Us'
-    ]);
-});
+
+Route::get('/contact_us', [ShopController::class, 'index']);
 
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/login', [AuthController::class, 'login'])->name('login');
@@ -71,6 +79,7 @@ Route::prefix('admin')->middleware(["auth:sanctum", "admin"])->as("admin.")->gro
     Route::resource('product', AdminProductController::class);
     Route::resource('event', AdminEventController::class);
     Route::resource('promo', AdminPromoController::class);
+    Route::resource('shop', AdminShopController::class);
 });
 
 Route::get('/payment/{order_id}', [OrderController::class, 'checkout'] )->name('payment')->middleware("auth:sanctum");
