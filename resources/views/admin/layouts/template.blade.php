@@ -211,9 +211,9 @@
                         </li>
 
                         <li>
-                            <a href="apps-projects.html">
-                                <i class="mdi mdi-page-next"></i>
-                                <span> Projects </span>
+                            <a href="{{route('admin.order.index')}}">
+                                <i class="mdi mdi-cart"></i>
+                                <span> Orders </span>
                             </a>
                         </li>
 

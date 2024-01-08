@@ -14,12 +14,12 @@
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="simpleUnpit" class="form-label">Promo Percentage</label>
-                                    <input type="text" class="form-control" id="name" name="name" value="{{$promo->percentage}}" required>
+                                    <input type="text" class="form-control" id="name" name="percentage" value="{{$promo->percentage}}" required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6 mb-3">
-                                    <label for="inputState" class="form-label">Promo Percentage</label>
+                                    <label for="inputState" class="form-label">Event Name</label>
                                     <select id="event" name="event" class="form-select">
                                         <option></option>
                                         @foreach ($events as $event)

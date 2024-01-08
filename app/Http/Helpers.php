@@ -42,6 +42,7 @@ Class Helper
             ->leftJoin('carts', 'carts.product_id', '=', 'products.id')
             ->select('promos.*', 'events.*', 'products.*', 'carts.*') // Add columns from the 'cart' table
             ->where('user_id', $user_id)
+            ->where('order_id' , null)
             ->get();
         } else {
             return false;
@@ -51,7 +52,7 @@ Class Helper
     public static function getCartCount($user_id = ''){
         if (Auth::check()) {
             if ($user_id == "") $user_id = auth()->user()->id;
-            return Cart::where('user_id', $user_id)->sum('quantity');
+            return Cart::where('user_id', $user_id)->where('order_id' , null)->sum('quantity');
         } else {
             return false;
         }

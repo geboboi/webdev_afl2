@@ -34,15 +34,13 @@
                                             <a href ="{{ route('admin.promo.edit', $promo->id) }}"><button
                                                     type="button" class="btn btn-success waves-effect waves-light"
                                                     name="edit" id="edit"><i class="fas fa-edit"></i></button></a>
-                                            <button type="button" class="btn btn-info waves-effect waves-light"><i
-                                                    class="fas fa-file-alt"></i></button>
-                                            {{-- <form action="{{ route('admin.event.destroy', $event->id) }}" method="POST"
-                                                onsubmit="return confirm('Apakah Anda yakin ingin menghapus Event {{ $event->event_name }}?');">
+                                            <form action="{{ route('admin.promo.destroy', $promo->id) }}" method="POST"
+                                                onsubmit="return confirm('Apakah Anda yakin ingin menghapus Promo {{ $promo->percentage }}%?');">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger waves-effect waves-light"><i
                                                         class="fas fa-trash"></i></button>
-                                            </form> --}}
+                                            </form>
                                         </div>
                                     </td>
                                 </tr>

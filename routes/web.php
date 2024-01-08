@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\EventController as AdminEventController;
 use App\Http\Controllers\Admin\PromoController as AdminPromoController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\Admin\ShopController as AdminShopController;
+use App\Http\Controllers\Admin\OrderController as AdminOrderController;
 use App\Http\Controllers\PromoController;
 use App\Http\Controllers\ShopController;
 
@@ -69,7 +70,7 @@ Route::post('/login-action', [AuthController::class, 'loginAction'])->name('logi
 Route::post('/register-action', [AuthController::class, 'registerAction'])->name('register.action');
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/checkout', [CheckoutController::class, 'getDistrict'])->name('checkout.district')->middleware("auth:sanctum");
+Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.district')->middleware("auth:sanctum");
 Route::post('/checkout/add', [CheckoutController::class, 'create'])->name('checkout.add')->middleware("auth:sanctum");
 
 Route::prefix('admin')->middleware(["auth:sanctum", "admin"])->as("admin.")->group(function () {
@@ -80,6 +81,7 @@ Route::prefix('admin')->middleware(["auth:sanctum", "admin"])->as("admin.")->gro
     Route::resource('event', AdminEventController::class);
     Route::resource('promo', AdminPromoController::class);
     Route::resource('shop', AdminShopController::class);
+    Route::resource('order', AdminOrderController::class);
 });
 
 Route::get('/payment/{order_id}', [OrderController::class, 'checkout'] )->name('payment')->middleware("auth:sanctum");

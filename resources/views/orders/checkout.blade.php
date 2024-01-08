@@ -97,38 +97,26 @@
                             <div class="check-pro">
                                 <h2>In your cart (2)</h2>
                                 <ul class="check-ul">
+                                    @foreach ($carts as $cart)
+                                    @php
+                                               $product = App\Models\Product::find($cart->product_id);
+                                            @endphp
                                     <li>
                                         <div class="check-pro-img">
                                             <a href="product-template.html">
-                                                <img src="img/product-list/p-1.jpg" class="img-fluid" alt="p-1">
+                                                <img src="{{ asset('storage/'. $product->product_image) }}" class="img-fluid" alt="p-1">
                                             </a>
                                         </div>
                                         <div class="check-content">
-                                            <a href="product-template.html">Candy nut chocolate</a>
+
+                                            <a href="">{{$product->name}}</a>
                                             <span class="check-code-blod">
-                                                <span>Product code:</span>
-                                                <span>CA70051541B</span>
                                             </span>
-                                            <span class="check-qty">4 X</span>
-                                            <span class="check-price">€11,00</span>
+                                            <span class="check-qty">{{$cart->quantity}} X</span>
+                                            <span class="check-price">{{ 'Rp ' . number_format($cart->price, 0, ',', '.') }}</span>
                                         </div>
                                     </li>
-                                    <li>
-                                        <div class="check-pro-img">
-                                            <a href="product-template.html">
-                                                <img src="img/product-list/p-2.jpg" class="img-fluid" alt="p-2">
-                                            </a>
-                                        </div>
-                                        <div class="check-content">
-                                            <a href="product-template.html">A bekery doughnuts</a>
-                                            <span class="check-code-blod">
-                                                <span>Product code:</span>
-                                                <span>CA70051541B</span>
-                                            </span>
-                                            <span class="check-qty">4 X</span>
-                                            <span class="check-price">€21,00</span>
-                                        </div>
-                                    </li>
+                                    @endforeach
                                 </ul>
                             </div>
                             <h2>Your order</h2>
@@ -137,17 +125,25 @@
                                     <span>Product:</span>
                                     <span>Total</span>
                                 </li>
+                                @php
+                                    $sum = 0;
+                                @endphp
+                                @foreach ($carts as $cart)
+                                    @php
+                                               $product = App\Models\Product::find($cart->product_id);
+
+                                            @endphp
                                 <li class="order-details">
-                                    <span>Candy nut chocolate</span>
-                                    <span>€44,00</span>
+                                    <span>{{$product->name}}</span>
+                                    <span>{{ 'Rp ' . number_format($cart->amount, 0, ',', '.') }}</span>
                                 </li>
-                                <li class="order-details">
-                                    <span>A bekery doughnutss</span>
-                                    <span>€84,00</span>
-                                </li>
+                                @php
+                                    $sum += $cart->amount;
+                                @endphp
+                                @endforeach
                                 <li class="order-details">
                                     <span>Subtotal</span>
-                                    <span>€128,00</span>
+                                    <span>{{ 'Rp ' . number_format($sum, 0, ',', '.') }}</span>
                                 </li>
                                 <li class="order-details">
                                     <span>Shipping Charge</span>
@@ -155,7 +151,8 @@
                                 </li>
                                 <li class="order-details">
                                     <span>Total</span>
-                                    <span>€128,00</span>
+                                    <span>{{ 'Rp ' . number_format($sum, 0, ',', '.') }}</span>
+                                    <input type="hidden" name="total" value="{{$sum}}">
                                 </li>
                             </ul>
                             {{-- <form>

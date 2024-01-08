@@ -19,6 +19,12 @@ return new class extends Migration
             ->on('products')
             ->onUpdate('cascade')
             ->onDelete('cascade');
+            $table->unsignedBigInteger('order_id')->nullable();
+            $table->foreign('order_id')
+            ->references('id')
+            ->on('orders')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')
             ->references('id')

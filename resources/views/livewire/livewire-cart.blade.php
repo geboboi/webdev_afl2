@@ -121,22 +121,11 @@
                                         <span
                                             class="amount total-price">{{ 'Rp ' . number_format($sumsum, 0, ',', '.') }}</span>
                                     </div>
-                                    <div class="proceed-to-discount">
-                                        <input type="text" name="discount" placeholder="Discount code">
-                                    </div>
+
                                     <div class="proceed-to-checkout">
-                                        <a href="checkout-style1.html">Checkout</a>
+                                        <a href="{{route('checkout.district')}}">Checkout</a>
                                     </div>
-                                    <div class="cart-payment-icon">
-                                        <a href="javascript:void(0)" class="payment-icon">
-                                            <img src="img/payment/visa.svg" class="img-fluid" alt="visa">
-                                            <img src="img/payment/master.svg" class="img-fluid" alt="master">
-                                            <img src="img/payment/express.svg" class="img-fluid" alt="express">
-                                            <img src="img/payment/paypal.svg" class="img-fluid" alt="paypal">
-                                            <img src="img/payment/diners.svg" class="img-fluid" alt="diners">
-                                            <img src="img/payment/discover.svg" class="img-fluid" alt="discover">
-                                        </a>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>

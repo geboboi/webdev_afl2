@@ -67,14 +67,14 @@ class PromoController extends Controller
     public function edit(Promo $promo)
     {
         $promos = DB::table('promos')
-        ->select('promos.*')
-        ->where('promos.id', '=', $promo->id)
-        ->first();
+            ->select('promos.*')
+            ->where('promos.id', '=', $promo->id)
+            ->first();
         $promo = Promo::find($promo);
         $events = Event::all();
-        return view('admin.promos.index', [
+        return view('admin.promos.edit', [
             'title' => ' Sale',
-            'promo' => $promo,
+            'promo' => $promos,
             'events' => $events
         ]);
     }
@@ -82,19 +82,21 @@ class PromoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePromoRequest $request, Promo $promo)
+    public function update(Request $request, Promo $promo)
     {
         if ($request->event) {
-            Promo::updated([
+            $promo->update([
                 'percentage' => $request->percentage,
                 'event_id' => $request->event
             ]);
         } else {
-            Promo::updated([
+            $promo->update([
                 'percentage' => $request->percentage,
                 'event_id' => null
             ]);
         }
+
+        return redirect()->route('admin.promo.index')->with('success', 'Promo updated successfully');
     }
 
     /**
@@ -102,6 +104,8 @@ class PromoController extends Controller
      */
     public function destroy(Promo $promo)
     {
-        //
+        $promo->delete();
+
+        return redirect()->route('admin.promo.index')->with('success', 'Promo deleted successfully');
     }
 }
