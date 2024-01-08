@@ -74,9 +74,7 @@ Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.di
 Route::post('/checkout/add', [CheckoutController::class, 'create'])->name('checkout.add')->middleware("auth:sanctum");
 
 Route::prefix('admin')->middleware(["auth:sanctum", "admin"])->as("admin.")->group(function () {
-    Route::get('/', function () {
-        return view('admin.dashboard');
-    })->name('dashboard');
+Route::get('/', [AdminOrderController::class, 'show'])->name('dashboard');
     Route::resource('product', AdminProductController::class);
     Route::resource('event', AdminEventController::class);
     Route::resource('promo', AdminPromoController::class);

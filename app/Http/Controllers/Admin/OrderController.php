@@ -36,9 +36,10 @@ class OrderController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Order $order)
+    public function show()
     {
-        //
+        $orderCount = Order::all()->count();
+         return view('admin.dashboard', compact('orderCount'));
     }
 
     /**
