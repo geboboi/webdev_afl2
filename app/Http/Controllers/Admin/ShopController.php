@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreShopRequest;
 use App\Http\Requests\UpdateShopRequest;
 use App\Models\Shop;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ShopController extends Controller
 {
@@ -14,7 +16,11 @@ class ShopController extends Controller
      */
     public function index()
     {
-        //
+        $shops = Shop::all();
+        return view('admin.shops.index', [
+            'title' => 'Contact Us',
+            'shops' => $shops
+        ]);
     }
 
     /**
@@ -22,15 +28,23 @@ class ShopController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.shops.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreShopRequest $request)
+    public function store(Request $request)
     {
-        //
+
+            Shop::create([
+                'name' => $request->name,
+                'address' => $request->address,
+                'operational_time' => $request->operational_time,
+                'map' => $request->map
+            ]);
+
+        return redirect()->route('admin.shop.index')->with('success', 'New Shop added successfully');
     }
 
     /**
@@ -46,22 +60,39 @@ class ShopController extends Controller
      */
     public function edit(Shop $shop)
     {
-        //
+        $shops = DB::table('shops')
+        ->select('shops.*')
+        ->where('shops.id', '=', $shop->id)
+        ->first();
+        $shop = Shop::find($shop);
+
+        return view('admin.shops.edit', compact('shops'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateShopRequest $request, Shop $shop)
+    public function update(Request $request, Shop $shop)
     {
-        //
+        $shop->update([
+            'name' => $request->name,
+            'address' => $request->address,
+            'operational_time' => $request->operational_time,
+            'map' => $request->map
+        ]);
+        return redirect()->route('admin.shop.index')->with('success', 'Shop updated successfully');
+
     }
+
+
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(Shop $shop)
     {
-        //
+        $shop->delete();
+
+        return redirect()->route('admin.shop.index')->with('success', 'Event deleted successfully');
     }
 }

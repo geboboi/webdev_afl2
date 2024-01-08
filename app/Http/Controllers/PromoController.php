@@ -6,6 +6,7 @@ use App\Models\Promo;
 use App\Http\Requests\StorePromoRequest;
 use App\Http\Requests\UpdatePromoRequest;
 use App\Models\Event;
+use Illuminate\Support\Facades\DB;
 
 class PromoController extends Controller
 {
@@ -19,10 +20,10 @@ class PromoController extends Controller
 
     public function discount($id)
     {
-        $promo = Promo::with('product')->find($id);
+        $promos = Promo::with('product')->find($id);
         return view('promos/promo_detail', [
             'title' => ' Sale',
-            'promos' => $promo
+            'promos' => $promos
         ]);
     }
     /**

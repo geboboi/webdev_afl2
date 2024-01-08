@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use App\Models\Wishlist;
 use App\Http\Requests\StoreWishlistRequest;
 use App\Http\Requests\UpdateWishlistRequest;
+use Cart;
+use Illuminate\Http\Request;
+use App\Models\Product;
 
 class WishlistController extends Controller
 {
@@ -13,7 +17,7 @@ class WishlistController extends Controller
      */
     public function index()
     {
-        $wishlist = Wishlist::all();
+        $wishlist = Wishlist::where('user_id', Auth::id())->get();
         return view('wishlist', [
             'title' => "Wishlist",
             'wishlist' => $wishlist
@@ -23,17 +27,44 @@ class WishlistController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function addToWishlist($productId)
     {
-        //
+        if(Auth::check()){
+            if(Wishlist::where('user_id', Auth::id())->where('product_id', $productId)->exists()){
+                return redirect()->route('wishlist.index')->with('failed', 'Product already in Wishlist');
+            }else{
+                $product = Product::find($productId);
+                Wishlist::create([
+                    'user_id' => Auth::id(),
+                    'product_id' => $productId,
+                    'price' => $product->price,
+
+                ]);
+                return redirect()->route('wishlist.index')->with('success', 'Product Successfully Added in Wishlist');
+            }
+         }
+    }
+
+    // public function deleteWishlist($wishlistId)
+    // {
+    //     Wishlist::where('user_id', Auth::id())->where('id', $wishlistId)->delete();
+
+    //     return redirect()->route('wishlist.index')->with('success', 'Product Successfully deleted in Wishlist');
+
+    // }
+
+    public function clearItem()
+    {
+        Wishlist::where('user_id', Auth::id())->delete();
+        return redirect()->route('wishlist.index');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreWishlistRequest $request)
+    public function store(Request $request)
     {
-        //
+
     }
 
     /**

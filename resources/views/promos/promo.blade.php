@@ -17,7 +17,7 @@
                     @if ($sekarang > $event->start_date && $sekarang < $event->end_date )
                     <div class="item">
                         <a href="{{route('promo.detail', $event->id)}}" class="banner-hover">
-                            <img src="{{ asset($event->banner) }}" class="img-fluid" alt="event-banner">
+                            <img src="{{ asset('storage/'. $event->banner) }}" class="img-fluid" alt="event-banner">
                         </a>
                     </div>
                     @endif

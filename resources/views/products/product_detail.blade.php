@@ -81,7 +81,7 @@
                                             <div class="pro-prlb pro-sale">
                                                 <div class="price-box">
                                                     @php $sekarang = Carbon::now(); @endphp
-                                                    @if ($sekarang > $product->start_date && $sekarang < $product->end_date )
+                                                    @if ($sekarang > $product->start_date && $sekarang < $product->end_date)
                                                         @php
                                                             $newprice = $product->price - ($product->price * $product->percentage) / 100;
                                                         @endphp
@@ -116,13 +116,28 @@
                                             </div>
                                         </div>
                                         <div class="product-info">
-                                            <form method="post" class="cart">
-                                                <div class="pro-detail-button">
-                                                    <a href="https://wa.me/6287798165115?text=Halo%20kak,%20aku%20mau%20order%20dongg~%20%0ANama%20produk%20:%20{{$product->name}}%20%0AJumlah%20:%20" class="btn btn-cart btn_theme">
-                                                        <span>Buy now</span>
+                                            <div class="pro-detail-button">
+                                                <a href="{{ route('cart.store', $product->id) }}" id="cartEffect"
+                                                    class="btn btn-cart btn_theme">
+                                                    <span >Add to cart</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="product-info">
+                                            <div class="product-actions">
+                                                <!-- pro-deatail wishlist start -->
+                                                <div class="pro-aff-che">
+                                                    <a href="{{ route('wishlist.store', $product->id) }}"
+                                                        class="wishlist">
+                                                        <span
+                                                            class="wishlist-icon action-wishlist tile-actions--btn wishlist-btn">
+                                                            <span class="add-wishlist"><i class="bi bi-heart"></i></span>
+                                                        </span>
+                                                        <span class="wishlist-text">Wishlist</span>
                                                     </a>
                                                 </div>
-                                            </form>
+                                                <!-- pro-deatail wishlist end -->
+                                            </div>
                                         </div>
                                         <div class="product-info">
                                             <div class="form-group">
@@ -139,12 +154,14 @@
                                                         <div class="delivery-block">
                                                             <div class="space-block">
                                                                 <h4>Delivery</h4>
-                                                                <p>Semua pesanan dikirim dengan kurir internal dan external (Grab, Gojek, dll).</p>
+                                                                <p>Semua pesanan dikirim dengan kurir internal dan external
+                                                                    (Grab, Gojek, dll).</p>
                                                                 <p>Pengiriman gratis untuk Rungkut dan sekitarnya.</p>
                                                             </div>
                                                             <div class="space-block">
                                                                 <h4>Help</h4>
-                                                                <p>Beri tahu kami jika Anda memiliki pertanyaan atau kekhawatiran lainnya.</p>
+                                                                <p>Beri tahu kami jika Anda memiliki pertanyaan atau
+                                                                    kekhawatiran lainnya.</p>
                                                                 <p>Phone: +62 87798165115</p>
                                                             </div>
                                                         </div>
